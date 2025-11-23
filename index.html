@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /> 
+    <title>Kartik Maheshwari - Portfolio</title>
+    <link rel="stylesheet" href="style.css" />
+    <script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+    </script>
+    <script type="text/javascript">
+        (function(){
+            emailjs.init({
+            publicKey: "rfg-Mq73vFzGTh8Qk",
+        });
+    })();
+    </script>
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <header>
+        <nav class="navbar">
+            <div class="logo"><img src="assets/mainlogo1.png" alt="kartik"></div>
+            
+            <div class="menu-btn" id="menu-btn">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+
+            <!-- NEW HAMBURGER -->
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+
+            <ul class="nav-links" id="nav-links">
+                <li><a href="#home" class="nav-link active">Home</a></li>
+                <li><a href="#about-section" class="nav-link">About</a></li>
+                <li><a href="#skills" class="nav-link">Skills</a></li>
+                <li><a href="#projects" class="nav-link">Projects</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+
+    <!--  main -->
+        <section id="home" class="hero">
+            <div class="dev">
+                <div class="area fade-in-element" >
+                        <ul class="circles">
+                                <li></li><li></li><li></li><li></li>
+                                <li></li><li></li><li></li><li></li>
+                                <li></li><li></li>
+                        </ul>
+                </div >
+                <div class="infoContainer">
+                    <div class="devInfo">
+                        <div class="ques">Hey Visitor!</div>
+                        <div class="name"><spam class="iam">I am </spam><span class="typing"></span></div>
+                        <div class="about">A Front End Developer.Transforming concepts into elegant interfaces.</div>
+                        <div class="resume">
+                            <button onclick="window.open('assets/Resume/Kartik Maheshwari Resume.pdf', '_blank')">Resume</button>
+                            <button class="wiggle-btn" onclick="location.href='#contact'"> Get In Touch</button>
+                        </div>
+                    </div>
+                    <div class="devPic">
+                        <img class="background" src = "assets/Untitled.png">
+                        <img class="foreground" src = "assets/main.png" >
+                        
+                        </div>  
+                </div>
+            </div>
+        </section>
+        <section id="about-section"">
+            <div class="about-container fade-up-element">
+                <div class="about-info">
+                        <h2>About Me</h2>
+                        <p>
+                            I'm Kartik Maheshwari, a Front-End Developer passionate about building clean, modern, and responsive web interfaces. 
+                            I love transforming ideas into functional, elegant user experiences using HTML, CSS, JavaScript, and Frameworks such as Reactand Tailwind CSS.
+                        </p>
+                    <div class="about-details">
+                        <p><strong>Experience:</strong> Fresher / Student Developer</p>
+                        <p><strong>Location:</strong> India</p>
+                        <p><strong>Speciality:</strong> Front-End Development</p>
+                    </div>
+                    <div class="tabs">
+                        <button class="tab active" data-tab="lang-tab">Languages</button>
+                        <button class="tab " data-tab="award-tab">Accomplishment</button>
+                        <button class="tab" data-tab="edu-tab">Education</button>
+                    </div>
+                    <div class="tab-content">
+                        <!--Languages-->
+                        <div id="lang-tab" class="content active">
+                            <ul>
+                            <li><p> C++ </p></li><li><p> Python </p></li>
+                            <li><p> CSS</p></li>
+                            <li><p> JavaScript </p></li>
+                            <li><p> SQL </p></li>
+                            
+                            </ul>
+                        </div>
+                        <!-- AWARD -->
+                        <div id="award-tab" class="content">
+                            <ul>
+                            <li><p>Placed within <strong>10%</strong>  in my Batch continously. </p></li>
+                            <li><p>Solved Over <strong>100+ questions</strong> on Leetcode and Gfg </p></li>
+                            </ul>
+                        </div>
+
+                        <!-- EDUCATION -->
+                        <div id="edu-tab" class="content">
+                            <p><strong>B.Tech in CSE(AI&ML)</strong> – G.B.Pant Institute of Engineering and Technology.(2022–2026)</p>
+                            <p><strong>Senior Secondary</strong> – St. Peters School, Kichha</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!--SKIILL-->      
+        <section id="skills" class="skills-section ">
+            <div class="skill-container">
+                <h2 class="skills-title">My Skills</h2>
+                <div class="skills-grid">
+                <!-- CSS -->
+                <div class="skill-card">
+                    <h2>Languages</h2>
+                    <ul>
+                        <li>
+                            <img src="assets/icons/cpp.png" alt="React">
+                            <h3>C++</h3>
+                        </li>
+                        <li>
+                            <img src="assets/icons/js.webp" alt="JavaScript">
+                            <h3>JavaScript</h3>
+                        </li>
+                        <li>
+                            <img src="assets/icons/python.png" alt="React">
+                            <h3>Python</h3>
+                        </li>
+                        <li>
+                            <img src="assets/icons/sql.png" alt="CSS">
+                            <h3>SQL</h3>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Databasesd -->
+                <div class="skill-card">
+                    <h2>Databases</h2>
+                    <img src="assets/icons/MongoDB.png">
+                    <h3>Mongo DB</h3>
+                </div>
+
+                <!-- React -->
+                <div class="skill-card">
+                    <h2>Framworks</h2>
+                        <ul>
+                        <li>
+                        <img src="assets/icons/React.png">
+                            <h3>React</h3>
+                        </li>
+                        <li>
+                        <img src="assets/icons/tailwind-css.png"  style="padding-top: 2.5vh;">
+                            <h3 >TailwindCSS</h3>
+                        </li>
+                    </ul>
+                </div>
+                <div class="skill-card">
+                    <h2>Cloud abd Tools</h2>
+                        <ul>
+                        <li>
+                        <img src="assets/icons/appwrite.webp" >
+                            <h3>Appwrrite</h3>
+                        </li>
+                        <li>
+                        <img src="assets/icons/github.png">
+                            <h3 >GitHub</h3>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            </div>
+
+        </section>
+
+        <!---projects-->
+        <section id="projects" class="projects-section">
+
+            <div id="particle-container">
+                <div class="particle"></div>
+                <div class="particle"></div>
+                <div class="particle"></div>
+                <div class="particle"></div>
+                <div class="particle"></div>
+                <div class="particle"></div>
+                <div class="particle"></div>
+                <div class="particle"></div>
+                <div class="particle"></div>
+                <div class="particle"></div>
+                <div class="particle"></div>
+                <div class="particle"></div>
+                <div class="particle"></div>
+                <div class="particle"></div>
+                <div class="particle"></div>
+                <div class="particle"></div>
+                <div class="particle"></div>
+                <div class="particle"></div>
+                <div class="particle"></div>
+                <div class="particle"></div>
+                <div class="particle"></div>
+                <div class="particle"></div>
+                <div class="particle"></div>
+                <div class="particle"></div>
+                <div class="particle"></div>
+                <div class="particle"></div>
+                <div class="particle"></div>
+                <div class="particle"></div>
+                <div class="particle"></div>
+                <div class="particle"></div>
+            </div>
+
+            <h2 class="projects-title">Projects</h2>
+
+            <div class="projects-grid fade-up-element">
+
+                <!-- PROJECT 1 -->
+                <div class="project-card">
+                    <div class="project-img">
+                        <img src="assets/Project_Images/Portfolio.png" alt="Project 1">
+                    </div>
+                    <h3>Portfolio Website</h3>
+                    <p class="project-desc">
+                        A responsive personal portfolio built with HTML, CSS and JavaScript
+                        to showcase my skills and projects.
+                    </p>
+                    <p class="project-tech">• HTML • CSS • JavaScript</p>
+                    <div class="project-links">
+                        <a href="#" target="_blank">Live Demo</a>
+                        <a href="#" target="_blank">Code</a>
+                    </div>
+                </div>
+
+                <!-- PROJECT 2 -->
+                <div class="project-card">
+                    <div class="project-img">
+                        <img src="assets/Project_Images/Spotify_clone.jpg" alt="Project 2">
+                    </div>
+                    <h3>Spotify Clone</h3>
+                    <p class="project-desc">
+                        A simple Sopotify Clone
+                    </p>
+                    <p class="project-tech">• React • Tailwind CSS</p>
+                    <div class="project-links">
+                        <!--<a href="#" target="_blank">Live Demo</a>-->
+                        <a href="#" target="_blank">Code</a>
+                    </div>
+                </div>
+
+                <!-- PROJECT 3 -->
+                <div class="project-card">
+                    <div class="project-img">
+                        <img src="assets/Project_Images/Chat App.jpg" alt="Project 3">
+                    </div>
+                    <h3>Chat App</h3>
+                    <p class="project-desc">
+                        Built a fullstack real-time chat application using React.js and Appwrite Cloud for backend, storage, and authentication.
+                    </p>
+                    <p class="project-tech">• Appwrite Cloud • React.js</p>
+                    <div class="project-links">
+                        <!--<a href="#" target="_blank">Live Demo</a>-->
+                        <a href="#" target="_blank">Code</a>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+
+        <section id="contact" class="contact-section">
+
+            <h2 class="contact-title">Contact Me</h2>
+            <p class="contact-subtitle">Feel free to reach out for collaborations or just a friendly hello 👋</p>
+
+            <div class="contact-container">
+
+                <!-- LEFT SIDE (INFO) -->
+                <div class="contact-info-card glass-card">
+                    <h3>Get in Touch</h3>
+                    <h4>I’d love to hear from you.</h4>
+                    <p><strong>Email:</strong> maheshwarikartik1902@gmail.com</p>
+                    <p><strong>Location:</strong> India</p>
+                    <p style="color: aqua;"><strong>Connect with me on social platforms :</strong></p>
+
+                    <div class="card">
+                        <a class="social-link1" href="https://github.com/maheshwarikartik1902-droid" target="_blank">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="#fff" height="1em" viewBox="0 0 496 512"><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"></path></svg>
+                        </a>
+                        <a class="social-link2" href="https://www.linkedin.com/in/kartik-maheshwari-/" target="_blank">
+                            <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 448 512" fill="#fff"><path d="M100.28 448H7.4V148.9h92.88zM53.79 108.1C24.09 108.1 0 83.5 0 53.8a53.79 53.79 0 0 1 107.58 0c0 29.7-24.1 54.3-53.79 54.3zM447.9 448h-92.68V302.4c0-34.7-.7-79.2-48.29-79.2-48.29 0-55.69 37.7-55.69 76.7V448h-92.78V148.9h89.08v40.8h1.3c12.4-23.5 42.69-48.3 87.88-48.3 94 0 111.28 61.9 111.28 142.3V448z"></path></svg>          </a>
+                    </div>  
+                </div>
+
+                <!-- RIGHT SIDE (FORM) -->
+                <form class="contact-form glass-card" id="contact-form">
+
+                    <div class="form-group">
+                        <input type="text" id="name" name="name" placeholder="Your Name" required />
+                    </div>
+
+                    <div class="form-group">
+                        <input type="email" id="email" name="email" placeholder="Your Email" required />
+                    </div>
+
+                    <div class="form-group" >
+                        <textarea placeholder="Your Message" name="message" id="message" required></textarea>
+                    </div>
+
+                    <button type="submit" class="send-btn">Send Message</button>
+
+                </form>
+
+            </div>
+
+
+        </section>
+                    
+        <div id="toast" class="toast"></div>
+        <!-- LOADING OVERLAY -->
+        <div id="loading-overlay" class="loading-overlay">
+            <div class="loader"></div>
+        </div>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <p class="footer-credit">
+                Designed & Built with ❤️ by Kartik
+            </p>
+
+
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script type="module">
+        // Import the functions you need from the SDKs you need
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/12.6.0/firebase-app.js";
+        import { getAnalytics } from "https://www.gstatic.com/firebasejs/12.6.0/firebase-analytics.js";
+        // TODO: Add SDKs for Firebase products that you want to use
+        // https://firebase.google.com/docs/web/setup#available-libraries
+
+        // Your web app's Firebase configuration
+        // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+        const firebaseConfig = {
+            apiKey: "AIzaSyABtfSpFeonlC1hExpN947g4SknOOmfnWM",
+            authDomain: "portfolio-47002.firebaseapp.com",
+            projectId: "portfolio-47002",
+            storageBucket: "portfolio-47002.firebasestorage.app",
+            messagingSenderId: "1070064569176",
+            appId: "1:1070064569176:web:b5b0de83705518bfc3732d",
+            measurementId: "G-M3RF0RRB88"
+        };
+
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const analytics = getAnalytics(app);
+    </script>
+</body>
+
+</html>
