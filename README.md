@@ -3,7 +3,7 @@
 A modern, responsive portfolio website built using **HTML, CSS, and JavaScript**.  
 Designed to showcase my skills, projects, and experience with clean UI, smooth animations, and a professional layout.
 
-Live Demo 👉 **[View Portfolio]((https://portfolio-47002.web.app/))**  
+Live Demo 👉 **[View Portfolio](https://portfolio-47002.web.app/)**  
 
 ---
 
