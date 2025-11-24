@@ -5,6 +5,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /> 
     <title>Kartik Maheshwari - Portfolio</title>
+    <link rel="icon" type="image/png" href="assets/Main logo  2.png">
     <link rel="stylesheet" href="style.css" />
     <script type="text/javascript"
         src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
@@ -23,7 +24,7 @@
     <!-- Navbar -->
     <header>
         <nav class="navbar">
-            <div class="logo"><img src="assets/mainlogo1.png" alt="kartik"></div>
+            <a href="#home"><div class="logo"><img src="assets/mainlogo1.png" alt="kartik"></div></a>
             
             <div class="menu-btn" id="menu-btn">
                 <i class="fa-solid fa-bars"></i>
@@ -241,8 +242,8 @@
                     </p>
                     <p class="project-tech">• HTML • CSS • JavaScript</p>
                     <div class="project-links">
-                        <a href="#" target="_blank">Live Demo</a>
-                        <a href="#" target="_blank">Code</a>
+                        <a href="https://portfolio-47002.web.app/" target="_blank">Live Demo</a>
+                        <a href="https://github.com/maheshwarikartik1902-droid/Portfolio" target="_blank">Code</a>
                     </div>
                 </div>
 
@@ -351,11 +352,9 @@
         // Import the functions you need from the SDKs you need
         import { initializeApp } from "https://www.gstatic.com/firebasejs/12.6.0/firebase-app.js";
         import { getAnalytics } from "https://www.gstatic.com/firebasejs/12.6.0/firebase-analytics.js";
-        // TODO: Add SDKs for Firebase products that you want to use
-        // https://firebase.google.com/docs/web/setup#available-libraries
+        
 
-        // Your web app's Firebase configuration
-        // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+        //  web app's Firebase configuration
         const firebaseConfig = {
             apiKey: "AIzaSyABtfSpFeonlC1hExpN947g4SknOOmfnWM",
             authDomain: "portfolio-47002.firebaseapp.com",

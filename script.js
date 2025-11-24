@@ -1,3 +1,6 @@
+
+/*HAMBURGUR*/
+
 const hamburger = document.getElementById("hamburger");
 const NavLinks = document.getElementById("nav-links");
 
@@ -54,8 +57,8 @@ function typeEffect() {
     setTimeout(typeEffect, speed);
 }
 
-typeEffect();
 
+setTimeout(typeEffect(),10000);
 /*----------wiggle----------*/
 
 setInterval (() => {

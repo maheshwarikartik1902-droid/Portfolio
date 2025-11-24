@@ -28,6 +28,7 @@ body {
     line-height: 1.6;
 }
 
+
 /* ---------- CONTAINER ---------- */
 section {
     padding: var(--section-padding) 10%;
@@ -1110,6 +1111,9 @@ header {
     }
     
     .logo {
+        display: flex;
+        align-items: center;
+        cursor: pointer;
         width: 50px;
         height: auto;
         margin-left: 0;
