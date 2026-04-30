@@ -3,373 +3,399 @@
 
 <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /> 
-    <title>Kartik Maheshwari - Portfolio</title>
-    <link rel="icon" type="image/png" href="assets/Main logo  2.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kartik Maheshwari — Full Stack Developer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300&family=Syne:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="style.css" />
-    <script type="text/javascript"
-        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
     </script>
     <script type="text/javascript">
-        (function(){
+        (function () {
             emailjs.init({
-            publicKey: "rfg-Mq73vFzGTh8Qk",
-        });
-    })();
+                publicKey: "rfg-Mq73vFzGTh8Qk",
+            });
+        })();
     </script>
 </head>
 
 <body>
 
-    <!-- Navbar -->
-    <header>
-        <nav class="navbar">
-            <a href="#home"><div class="logo"><img src="assets/mainlogo1.png" alt="kartik"></div></a>
-            
-            <div class="menu-btn" id="menu-btn">
-                <i class="fa-solid fa-bars"></i>
+    <!-- Custom Cursor -->
+    <div id="cursor-dot"></div>
+    <div id="cursor-ring"></div>
+
+    <!-- Scroll Progress -->
+    <div id="scroll-progress"></div>
+
+    <!-- Loading Overlay -->
+    <div id="loading-overlay">
+        <div class="loader-ring"></div>
+    </div>
+
+    <!-- Toast -->
+    <div id="toast"></div>
+
+    <!-- NAV -->
+    <nav id="navbar">
+        <a href="#home" class="nav-logo">KM<span class="dot">.</span><span class="nav-status-dot"></span></a>
+        <ul id="nav-links">
+            <li><a href="#home" class="nav-link">Home</a></li>
+            <li><a href="#about-section" class="nav-link">About</a></li>
+            <li><a href="#skills" class="nav-link">Skills</a></li>
+            <li><a href="#projects" class="nav-link">Projects</a></li>
+            <li><a href="#contact" class="nav-link">Contact</a></li>
+        </ul>
+        <a href="assets/Resume/KartikMaheshwari Resume.pdf" class="nav-resume" target="_blank">Resume ↗</a>
+        <button id="hamburger" aria-label="Toggle menu">
+            <span></span><span></span>
+        </button>
+    </nav>
+
+    <!-- HERO -->
+    <section id="home" class="hero">
+        <div class="hero-grid-bg" aria-hidden="true"></div>
+        <div class="hero-index">01</div>
+        <div class="hero-content">
+            <p class="hero-label">Full Stack Developer · India</p>
+            <h1 class="hero-name">Kartik<br>Maheshwari</h1>
+            <p class="hero-tagline">I am <span class="typing"></span><span class="cursor">|</span></p>
+            <p class="hero-desc">Building robust, end-to-end web applications from sleek frontends to efficient
+                backends.</p>
+            <div class="hero-actions">
+                <a href="#projects" class="btn-primary">View Work</a>
+                <a href="#contact" class="btn-ghost">Get In Touch</a>
             </div>
-
-            <!-- NEW HAMBURGER -->
-            <div class="hamburger" id="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-
-            <ul class="nav-links" id="nav-links">
-                <li><a href="#home" class="nav-link active">Home</a></li>
-                <li><a href="#about-section" class="nav-link">About</a></li>
-                <li><a href="#skills" class="nav-link">Skills</a></li>
-                <li><a href="#projects" class="nav-link">Projects</a></li>
-                <li><a href="#contact" class="nav-link">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
-
-
-    <!--  main -->
-        <section id="home" class="hero">
-            <div class="dev">
-                <div class="area fade-in-element" >
-                        <ul class="circles">
-                                <li></li><li></li><li></li><li></li>
-                                <li></li><li></li><li></li><li></li>
-                                <li></li><li></li>
-                        </ul>
-                </div >
-                <div class="infoContainer">
-                    <div class="devInfo">
-                        <div class="ques">Hey Visitor!</div>
-
-                        <div class="name"><spam class="iam">I am </spam><span class="typing"></span></div>
-                        <div class="about">A Front End Developer.Transforming concepts into elegant interfaces.</div>
-                        <div class="resume">
-                            <button onclick="window.open('assets/Resume/Kartik Maheshwari Resume.pdf', '_blank')">Resume</button>
-                            <button class="wiggle-btn" onclick="location.href='#contact'"> Get In Touch</button>
-                        </div>
-                    </div>
-                    <div class="devPic">
-                        <img class="background" src = "assets/Untitled.png">
-                        <img class="foreground" src = "assets/main.png" >
-                        
-                        </div>  
-                </div>
-            </div>
-        </section>
-        <section id="about-section"">
-            <div class="about-container fade-up-element">
-                <div class="about-info">
-                        <h2>About Me</h2>
-                        <p>
-                            I'm Kartik Maheshwari, a Front-End Developer passionate about building clean, modern, and responsive web interfaces. 
-                            I love transforming ideas into functional, elegant user experiences using HTML, CSS, JavaScript, and Frameworks such as Reactand Tailwind CSS.
-                        </p>
-                    <div class="about-details">
-                        <p><strong>Experience:</strong> Fresher / Student Developer</p>
-                        <p><strong>Location:</strong> India</p>
-                        <p><strong>Speciality:</strong> Front-End Development</p>
-                    </div>
-                    <div class="tabs">
-                        <button class="tab active" data-tab="lang-tab">Languages</button>
-                        <button class="tab " data-tab="award-tab">Accomplishment</button>
-                        <button class="tab" data-tab="edu-tab">Education</button>
-                    </div>
-                    <div class="tab-content">
-                        <!--Languages-->
-                        <div id="lang-tab" class="content active">
-                            <ul>
-                            <li><p> C++ </p></li><li><p> Python </p></li>
-                            <li><p> CSS</p></li>
-                            <li><p> JavaScript </p></li>
-                            <li><p> SQL </p></li>
-                            
-                            </ul>
-                        </div>
-                        <!-- AWARD -->
-                        <div id="award-tab" class="content">
-                            <ul>
-                            <li><p>Placed within <strong>10%</strong>  in my Batch continously. </p></li>
-                            <li><p>Solved Over <strong>100+ questions</strong> on Leetcode and Gfg </p></li>
-                            </ul>
-                        </div>
-
-                        <!-- EDUCATION -->
-                        <div id="edu-tab" class="content">
-                            <p><strong>B.Tech in CSE(AI&ML)</strong> – G.B.Pant Institute of Engineering and Technology.(2022–2026)</p>
-                            <p><strong>Senior Secondary</strong> – St. Peters School, Kichha</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!--SKIILL-->      
-        <section id="skills" class="skills-section ">
-            <div class="skill-container">
-                <h2 class="skills-title">My Skills</h2>
-                <div class="skills-grid">
-                <!-- CSS -->
-                <div class="skill-card">
-                    <h2>Languages</h2>
-                    <ul>
-                        <li>
-                            <img src="assets/icons/cpp.png" alt="React">
-                            <h3>C++</h3>
-                        </li>
-                        <li>
-                            <img src="assets/icons/js.webp" alt="JavaScript">
-                            <h3>JavaScript</h3>
-                        </li>
-                        <li>
-                            <img src="assets/icons/python.png" alt="React">
-                            <h3>Python</h3>
-                        </li>
-                        <li>
-                            <img src="assets/icons/sql.png" alt="CSS">
-                            <h3>SQL</h3>
-                        </li>
-                    </ul>
-                </div>
-
-                <!-- Databasesd -->
-                <div class="skill-card">
-                    <h2>Databases</h2>
-                    <img src="assets/icons/MongoDB.png">
-                    <h3>Mongo DB</h3>
-                </div>
-
-                <!-- React -->
-                <div class="skill-card">
-                    <h2>Framworks</h2>
-                        <ul>
-                        <li>
-                        <img src="assets/icons/React.png">
-                            <h3>React</h3>
-                        </li>
-                        <li>
-                        <img src="assets/icons/tailwind-css.png"  style="padding-top: 2.5vh;">
-                            <h3 >TailwindCSS</h3>
-                        </li>
-                    </ul>
-                </div>
-                <div class="skill-card">
-                    <h2>Cloud abd Tools</h2>
-                        <ul>
-                        <li>
-                        <img src="assets/icons/appwrite.webp" >
-                            <h3>Appwrrite</h3>
-                        </li>
-                        <li>
-                        <img src="assets/icons/github.png">
-                            <h3 >GitHub</h3>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-            </div>
-
-        </section>
-
-        <!---projects-->
-        <section id="projects" class="projects-section">
-
-            <div id="particle-container">
-                <div class="particle"></div>
-                <div class="particle"></div>
-                <div class="particle"></div>
-                <div class="particle"></div>
-                <div class="particle"></div>
-                <div class="particle"></div>
-                <div class="particle"></div>
-                <div class="particle"></div>
-                <div class="particle"></div>
-                <div class="particle"></div>
-                <div class="particle"></div>
-                <div class="particle"></div>
-                <div class="particle"></div>
-                <div class="particle"></div>
-                <div class="particle"></div>
-                <div class="particle"></div>
-                <div class="particle"></div>
-                <div class="particle"></div>
-                <div class="particle"></div>
-                <div class="particle"></div>
-                <div class="particle"></div>
-                <div class="particle"></div>
-                <div class="particle"></div>
-                <div class="particle"></div>
-                <div class="particle"></div>
-                <div class="particle"></div>
-                <div class="particle"></div>
-                <div class="particle"></div>
-                <div class="particle"></div>
-                <div class="particle"></div>
-            </div>
-
-            <h2 class="projects-title">Projects</h2>
-
-            <div class="projects-grid fade-up-element">
-
-                <!-- PROJECT 1 -->
-                <div class="project-card">
-                    <div class="project-img">
-                        <img src="assets/Project_Images/Portfolio.png" alt="Project 1">
-                    </div>
-                    <h3>Portfolio Website</h3>
-                    <p class="project-desc">
-                        A responsive personal portfolio built with HTML, CSS and JavaScript
-                        to showcase my skills and projects.
-                    </p>
-                    <p class="project-tech">• HTML • CSS • JavaScript</p>
-                    <div class="project-links">
-                        <a href="https://portfolio-47002.web.app/" target="_blank">Live Demo</a>
-                        <a href="https://github.com/maheshwarikartik1902-droid/Portfolio" target="_blank">Code</a>
-                    </div>
-                </div>
-
-                <!-- PROJECT 2 -->
-                <div class="project-card">
-                    <div class="project-img">
-                        <img src="assets/Project_Images/Spotify_clone.jpg" alt="Project 2">
-                    </div>
-                    <h3>Spotify Clone</h3>
-                    <p class="project-desc">
-                        A simple Sopotify Clone
-                    </p>
-                    <p class="project-tech">• React • Tailwind CSS</p>
-                    <div class="project-links">
-                        <!--<a href="#" target="_blank">Live Demo</a>-->
-                        <a href="#" target="_blank">Code</a>
-                    </div>
-                </div>
-
-                <!-- PROJECT 3 -->
-                <div class="project-card">
-                    <div class="project-img">
-                        <img src="assets/Project_Images/Chat App.jpg" alt="Project 3">
-                    </div>
-                    <h3>Chat App</h3>
-                    <p class="project-desc">
-                        Built a fullstack real-time chat application using React.js and Appwrite Cloud for backend, storage, and authentication.
-                    </p>
-                    <p class="project-tech">• Appwrite Cloud • React.js</p>
-                    <div class="project-links">
-                        <!--<a href="#" target="_blank">Live Demo</a>-->
-                        <a href="#" target="_blank">Code</a>
-                    </div>
-                </div>
-
-            </div>
-        </section>
-
-
-        <section id="contact" class="contact-section">
-
-            <h2 class="contact-title">Contact Me</h2>
-            <p class="contact-subtitle">Feel free to reach out for collaborations or just a friendly hello 👋</p>
-
-            <div class="contact-container">
-
-                <!-- LEFT SIDE (INFO) -->
-                <div class="contact-info-card glass-card">
-                    <h3>Get in Touch</h3>
-                    <h4>I’d love to hear from you.</h4>
-                    <p><strong>Email:</strong> maheshwarikartik1902@gmail.com</p>
-                    <p><strong>Location:</strong> India</p>
-                    <p style="color: aqua;"><strong>Connect with me on social platforms :</strong></p>
-
-                    <div class="card">
-                        <a class="social-link1" href="https://github.com/maheshwarikartik1902-droid" target="_blank">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="#fff" height="1em" viewBox="0 0 496 512"><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"></path></svg>
-                        </a>
-                        <a class="social-link2" href="https://www.linkedin.com/in/kartik-maheshwari-/" target="_blank">
-                            <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 448 512" fill="#fff"><path d="M100.28 448H7.4V148.9h92.88zM53.79 108.1C24.09 108.1 0 83.5 0 53.8a53.79 53.79 0 0 1 107.58 0c0 29.7-24.1 54.3-53.79 54.3zM447.9 448h-92.68V302.4c0-34.7-.7-79.2-48.29-79.2-48.29 0-55.69 37.7-55.69 76.7V448h-92.78V148.9h89.08v40.8h1.3c12.4-23.5 42.69-48.3 87.88-48.3 94 0 111.28 61.9 111.28 142.3V448z"></path></svg>          </a>
-                    </div>  
-                </div>
-
-                <!-- RIGHT SIDE (FORM) -->
-                <form class="contact-form glass-card" id="contact-form">
-
-                    <div class="form-group">
-                        <input type="text" id="name" name="name" placeholder="Your Name" required />
-                    </div>
-
-                    <div class="form-group">
-                        <input type="email" id="email" name="email" placeholder="Your Email" required />
-                    </div>
-
-                    <div class="form-group" >
-                        <textarea placeholder="Your Message" name="message" id="message" required></textarea>
-                    </div>
-
-                    <button type="submit" class="send-btn">Send Message</button>
-
-                </form>
-
-            </div>
-
-
-        </section>
-                    
-        <div id="toast" class="toast"></div>
-        <!-- LOADING OVERLAY -->
-        <div id="loading-overlay" class="loading-overlay">
-            <div class="loader"></div>
         </div>
+        <div class="hero-right">
+            <div class="hero-img-wrap">
+                <img src="assets/main.png" alt="Kartik Maheshwari" class="hero-img" />
+            </div>
+            <div class="hero-code-deco" aria-hidden="true">
+                <div class="code-line"><span class="code-k">const</span> developer = {</div>
+                <div class="code-line"> name: <span class="code-s">'Kartik'</span>,</div>
+                <div class="code-line"> stack: [<span class="code-s">'Next.js'</span>, <span
+                        class="code-s">'Nodejs'</span>, <span class="code-s">'React.js'</span>],</div>
+                <div class="code-line"> available: <span class="code-b">true</span></div>
+                <div class="code-line">};</div>
+            </div>
+        </div>
+        <div class="hero-scroll">
+            <span>scroll</span>
+            <div class="scroll-line"></div>
+        </div>
+    </section>
 
+    <!-- TECH TICKER -->
+    <div class="tech-ticker" aria-hidden="true">
+        <div class="ticker-track">
+            <span class="ticker-item">JavaScript <span class="tick-sep">·</span></span>
+            <span class="ticker-item">React.js <span class="tick-sep">·</span></span>
+            <span class="ticker-item">Next.js <span class="tick-sep">·</span></span>
+            <span class="ticker-item">Node.js <span class="tick-sep">·</span></span>
+            <span class="ticker-item">Express.js <span class="tick-sep">·</span></span>
+            <span class="ticker-item">TailwindCSS <span class="tick-sep">·</span></span>
+            <span class="ticker-item">MongoDB <span class="tick-sep">·</span></span>
+            <span class="ticker-item">C++ <span class="tick-sep">·</span></span>
+            <span class="ticker-item">shadcn/ui <span class="tick-sep">·</span></span>
+            <span class="ticker-item">GitHub <span class="tick-sep">·</span></span>
+            <span class="ticker-item">REST APIs <span class="tick-sep">·</span></span>
+            <!-- duplicate for seamless loop -->
+            <span class="ticker-item">JavaScript <span class="tick-sep">·</span></span>
+            <span class="ticker-item">React.js <span class="tick-sep">·</span></span>
+            <span class="ticker-item">Next.js <span class="tick-sep">·</span></span>
+            <span class="ticker-item">Node.js <span class="tick-sep">·</span></span>
+            <span class="ticker-item">Express.js <span class="tick-sep">·</span></span>
+            <span class="ticker-item">TailwindCSS <span class="tick-sep">·</span></span>
+            <span class="ticker-item">MongoDB <span class="tick-sep">·</span></span>
+            <span class="ticker-item">C++ <span class="tick-sep">·</span></span>
+            <span class="ticker-item">shadcn/ui <span class="tick-sep">·</span></span>
+            <span class="ticker-item">GitHub <span class="tick-sep">·</span></span>
+            <span class="ticker-item">REST APIs <span class="tick-sep">·</span></span>
+        </div>
+    </div>
+
+    <!-- ABOUT -->
+    <section id="about-section" class="about fade-up-element">
+        <div class="section-header">
+            <span class="section-num">02</span>
+            <h2 class="section-title" data-scramble>About</h2>
+        </div>
+        <div class="about-grid">
+            <div class="about-bio">
+                <p>I'm <strong>Kartik Maheshwari</strong>, a Full Stack Developer experienced in building web
+                    applications with React.js, Next.js, Node.js, and MongoDB.</p>
+                <p>I focus on robust, efficient, and user-centric end-to-end solutions — from sleek frontends to
+                    scalable backends and AI-powered integrations.</p>
+                <div class="about-meta">
+                    <div class="meta-item">
+                        <span class="meta-key">Role</span>
+                        <span class="meta-val">Full Stack Developer</span>
+                    </div>
+                    <div class="meta-item">
+                        <span class="meta-key">Location</span>
+                        <span class="meta-val">India</span>
+                    </div>
+                    <div class="meta-item">
+                        <span class="meta-key">Specialty</span>
+                        <span class="meta-val">Full-Stack Development</span>
+                    </div>
+                </div>
+            </div>
+            <div class="about-tabs-wrap">
+                <div class="tabs">
+                    <button class="tab active" data-tab="languages">Languages</button>
+                    <button class="tab" data-tab="accomplishments">Achievements</button>
+                    <button class="tab" data-tab="education">Education</button>
+                </div>
+                <div id="languages" class="content active">
+                    <ul class="list-clean">
+                        <li>JavaScript</li>
+                        <li>HTML / CSS</li>
+                        <li>C++</li>
+                    </ul>
+                </div>
+                <div id="accomplishments" class="content">
+                    <ul class="list-clean">
+                        <li>Ranked top 5 in academic batch</li>
+                        <li>250+ DSA problems on LeetCode & GFG</li>
+                    </ul>
+                </div>
+                <div id="education" class="content">
+                    <ul class="list-clean edu">
+                        <li>
+                            <strong>B.Tech CSE (AI & ML)</strong><br>
+                            G.B.Pant Institute of Engineering & Technology<br>
+                            <span class="year">2022 – 2026</span>
+                        </li>
+                        <li>
+                            <strong>Senior Secondary</strong><br>
+                            St. Peters School, Kichha
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        </div> <!-- end about-grid -->
+        
+        <div class="about-graphs">
+            <div class="about-graph-card">
+                <p class="skill-group-label">GitHub Activity</p>
+                <img src="https://github-readme-activity-graph.vercel.app/graph?username=maheshwarikartik1902-droid&bg_color=0b0b0b&color=6b6762&line=9eb8a0&point=e8e4dc&area=true&hide_border=true&area_color=9eb8a0&title_color=3a3835"
+                    alt="GitHub Activity Graph" loading="lazy" class="about-graph-img" />
+            </div>
+        </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section id="skills" class="skills fade-up-element">
+        <div class="section-header">
+            <span class="section-num">03</span>
+            <h2 class="section-title" data-scramble>Skills</h2>
+        </div>
+        <div class="skills-grid">
+            <div class="skill-group fade-in-element">
+                <p class="skill-group-label">Languages</p>
+                <div class="skill-items">
+                    <div class="skill-item">
+                        <img src="assets/icons/js.webp" alt="JavaScript"><span>JavaScript</span>
+                    </div>
+                    <div class="skill-item">
+                        <img src="assets/icons/cpp.png" alt="C++"><span>C++</span>
+                    </div>
+                </div>
+            </div>
+            <div class="skill-group fade-in-element">
+                <p class="skill-group-label">Frontend</p>
+                <div class="skill-items">
+                    <div class="skill-item">
+                        <img src="assets/icons/React.png" alt="React"><span>React.js</span>
+                    </div>
+                    <div class="skill-item">
+                        <img src="assets/icons/nextjs.png" alt="Next.js"><span>Next.js</span>
+                    </div>
+                    <div class="skill-item">
+                        <img src="assets/icons/tailwind-css.png" alt="Tailwind"><span>TailwindCSS</span>
+                    </div>
+                    <div class="skill-item">
+                        <img src="assets/icons/shadcn.png" alt="shadcn"><span>shadcn/ui</span>
+                    </div>
+                </div>
+            </div>
+            <div class="skill-group fade-in-element">
+                <p class="skill-group-label">Backend</p>
+                <div class="skill-items">
+                    <div class="skill-item">
+                        <img src="assets/icons/nodejs.png" alt="Node.js"><span>Node.js</span>
+                    </div>
+                    <div class="skill-item">
+                        <img src="assets/icons/expressjs.png" alt="Express"><span>Express.js</span>
+                    </div>
+                </div>
+            </div>
+            <div class="skill-group fade-in-element">
+                <p class="skill-group-label">Database & Tools</p>
+                <div class="skill-items">
+                    <div class="skill-item">
+                        <img src="assets/icons/MongoDB.png" alt="MongoDB"><span>MongoDB</span>
+                    </div>
+                    <div class="skill-item">
+                        <img src="assets/icons/github.png" alt="GitHub"><span>GitHub</span>
+                    </div>
+                    <div class="skill-item">
+                        <img src="assets/icons/vscode.png" alt="VS Code"><span>VS Code</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- PROJECTS -->
+    <section id="projects" class="projects fade-up-element">
+        <div class="section-header">
+            <span class="section-num">04</span>
+            <h2 class="section-title" data-scramble>Projects</h2>
+        </div>
+        <div class="projects-list">
+
+            <div class="project-card fade-in-element">
+                <div class="project-img-wrap">
+                    <img src="assets/Project_Images/NeuroVault.png" alt="NeuroVault">
+                    <div class="project-overlay">
+                        <a href="https://github.com/maheshwarikartik1902-droid" target="_blank"
+                            class="overlay-link">Code ↗</a>
+                    </div>
+                </div>
+                <div class="project-info">
+                    <div class="project-meta">
+                        <span class="project-num">01</span>
+                        <div class="project-tags">
+                            <span>Next.js</span><span>Convex</span><span>Clerk</span><span>OpenAI</span>
+                        </div>
+                    </div>
+                    <h3 class="project-title">NeuroVault</h3>
+                    <p class="project-desc">A Second Brain app to centralize notes and docs with OpenAI-powered
+                        summarization, AI chat, and semantic vector search.</p>
+                </div>
+            </div>
+
+            <div class="project-card fade-in-element">
+                <div class="project-img-wrap">
+                    <img src="assets/Project_Images/TypingBud.png" alt="TypingBud">
+                    <div class="project-overlay">
+                        <a href="https://github.com/maheshwarikartik1902-droid" target="_blank"
+                            class="overlay-link">Code ↗</a>
+                        <a href="https://typing-bud.vercel.app/" target="_blank" class="overlay-link">Live ↗</a>
+                    </div>
+                </div>
+                <div class="project-info">
+                    <div class="project-meta">
+                        <span class="project-num">02</span>
+                        <div class="project-tags">
+                            <span>React.js</span><span>Express.js</span><span>JWT</span>
+                        </div>
+                    </div>
+                    <h3 class="project-title">TypingBud</h3>
+                    <p class="project-desc">A typing speed app with three test modes, a real-time WPM & accuracy engine,
+                        and JWT-based auth with protected routes.</p>
+                </div>
+            </div>
+
+            <div class="project-card fade-in-element">
+                <div class="project-img-wrap">
+                    <img src="assets/Project_Images/Captionly.png" alt="Captionly">
+                    <div class="project-overlay">
+                        <a href="https://github.com/maheshwarikartik1902-droid" target="_blank"
+                            class="overlay-link">Code ↗</a>
+                    </div>
+                </div>
+                <div class="project-info">
+                    <div class="project-meta">
+                        <span class="project-num">03</span>
+                        <div class="project-tags">
+                            <span>Next.js</span><span>React</span><span>FFmpeg/WASM</span>
+                        </div>
+                    </div>
+                    <h3 class="project-title">Captionly</h3>
+                    <p class="project-desc">A full-stack captions platform — upload videos, generate transcriptions,
+                        edit timing, and render captions client-side via FFmpeg compiled to WebAssembly.</p>
+                </div>
+            </div>
+            <div class="project-card fade-in-element">
+                <div class="project-img-wrap">
+                    <img src="assets/Project_Images/Spotify-clone.png" alt="Sportify-clone">
+                    <div class="project-overlay">
+                        <a href="https://github.com/maheshwarikartik1902-droid" target="_blank"
+                            class="overlay-link">Code ↗</a>
+                    </div>
+                </div>
+                <div class="project-info">
+                    <div class="project-meta">
+                        <span class="project-num">04</span>
+                        <div class="project-tags">
+                            <span>TailwindCSS</span><span>React</span>
+                        </div>
+                    </div>
+                    <h3 class="project-title">Sportify-clone</h3>
+                    <p class="project-desc">A Spotify clone built with React.js and Tailwind CSS.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="contact fade-up-element">
+        <div class="section-header">
+            <span class="section-num">05</span>
+            <h2 class="section-title" data-scramble>Contact</h2>
+        </div>
+        <div class="contact-grid">
+            <div class="contact-info">
+                <p class="contact-intro">Open to collaborations, opportunities, or just a conversation.</p>
+                <div class="contact-links">
+                    <a href="mailto:maheshwarikartik1902@gmail.com" class="contact-link">
+                        <span class="link-label">Email</span>
+                        <span class="link-val">maheshwarikartik1902@gmail.com ↗</span>
+                    </a>
+                    <a href="https://github.com/maheshwarikartik1902-droid" target="_blank" class="contact-link">
+                        <span class="link-label">GitHub</span>
+                        <span class="link-val">maheshwarikartik1902-droid ↗</span>
+                    </a>
+                    <a href="https://www.linkedin.com/in/kartik-maheshwari-/" target="_blank"
+                        class="contact-link">
+                        <span class="link-label">LinkedIn</span>
+                        <span class="link-val">kartik-maheshwari ↗</span>
+                    </a>
+                </div>
+            </div>
+            <form id="contact-form" class="contact-form" novalidate>
+                <div class="form-field">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" placeholder="Your name" required />
+                </div>
+                <div class="form-field">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" placeholder="your@email.com" required />
+                </div>
+                <div class="form-field">
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" rows="5" placeholder="What's on your mind?"
+                        required></textarea>
+                </div>
+                <button type="submit" class="btn-primary wiggle-btn">Send Message</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
     <footer class="footer">
-        <div class="footer-container">
-            <p class="footer-credit">
-                Designed & Built with ❤️ by Kartik
-            </p>
-
-
-        </div>
+        <span>© 2025 Kartik Maheshwari</span>
+        <span>Designed & built with precision.</span>
     </footer>
 
     <script src="script.js"></script>
-    <script type="module">
-        // Import the functions you need from the SDKs you need
-        import { initializeApp } from "https://www.gstatic.com/firebasejs/12.6.0/firebase-app.js";
-        import { getAnalytics } from "https://www.gstatic.com/firebasejs/12.6.0/firebase-analytics.js";
-        
-
-        //  web app's Firebase configuration
-        const firebaseConfig = {
-            apiKey: "AIzaSyABtfSpFeonlC1hExpN947g4SknOOmfnWM",
-            authDomain: "portfolio-47002.firebaseapp.com",
-            projectId: "portfolio-47002",
-            storageBucket: "portfolio-47002.firebasestorage.app",
-            messagingSenderId: "1070064569176",
-            appId: "1:1070064569176:web:b5b0de83705518bfc3732d",
-            measurementId: "G-M3RF0RRB88"
-        };
-
-        // Initialize Firebase
-        const app = initializeApp(firebaseConfig);
-        const analytics = getAnalytics(app);
-    </script>
 </body>
 
 </html>
