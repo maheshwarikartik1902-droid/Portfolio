@@ -124,6 +124,27 @@ function typeEffect() {
 }
 typeEffect();
 
+// Hero name: trigger transition via class, then wire glitch on hover
+setTimeout(() => {
+    const heroName = document.querySelector('.hero-name');
+    if (!heroName) return;
+
+    // Trigger the fade-in transition
+    heroName.classList.add('loaded');
+
+    // Wire glitch hover — fires after loaded, no inline style conflicts
+    heroName.addEventListener('mouseenter', () => {
+        if (heroName.classList.contains('loaded')) {
+            heroName.classList.add('glitch-active');
+        }
+    });
+    heroName.addEventListener('animationend', (e) => {
+        if (e.animationName === 'glitch') {
+            heroName.classList.remove('glitch-active');
+        }
+    });
+}, 50); // tiny delay so transition fires after first paint
+
 /* ---- WIGGLE BUTTON ---- */
 setInterval(() => {
     const btn = document.querySelector(".wiggle-btn");

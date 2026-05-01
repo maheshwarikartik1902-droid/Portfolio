@@ -340,15 +340,24 @@ section {
 }
 
 .hero-name {
-    font-family: var(--display);
-    font-size: clamp(2.2rem, 4vw, 4rem);
-    font-weight: 800; line-height: 0.92;
-    letter-spacing: -0.04em; color: var(--text);
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(3.5rem, 7vw, 6.5rem);
+    font-weight: 400; line-height: 0.95;
+    letter-spacing: 0.02em; color: var(--text);
     margin-bottom: 1.5rem; position: relative;
-    opacity: 0; animation: fadeSlideUp 0.7s ease 0.35s forwards;
+    opacity: 0;
+    transform: translateY(18px);
+    transition: opacity 0.7s ease 0.35s, transform 0.7s ease 0.35s;
 }
-/* Glitch on hover */
-.hero-name:hover { animation: glitch 0.45s ease; }
+.hero-name.loaded {
+    opacity: 1;
+    transform: translateY(0);
+}
+/* Glitch — only fires after .loaded is set, no animation conflict */
+.hero-name.glitch-active {
+    animation: glitch 0.45s ease forwards;
+    transition: none; /* prevent transition fighting animation */
+}
 @keyframes glitch {
     0%   { transform: none; text-shadow: none; }
     10%  { transform: translateX(-3px); text-shadow: 3px 0 var(--code-k); }
