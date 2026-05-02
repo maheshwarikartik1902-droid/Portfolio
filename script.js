@@ -17,7 +17,7 @@ window.addEventListener("scroll", () => {
 
 /* ---- HAMBURGER MENU ---- */
 const hamburger = document.getElementById("hamburger");
-const navLinks  = document.getElementById("nav-links");
+const navLinks = document.getElementById("nav-links");
 
 hamburger.addEventListener("click", () => {
     hamburger.classList.toggle("active");
@@ -34,19 +34,19 @@ navLinks.querySelectorAll(".nav-link").forEach(link => {
 /* ============================================
    CUSTOM CURSOR
    ============================================ */
-const cursorDot  = document.getElementById("cursor-dot");
+const cursorDot = document.getElementById("cursor-dot");
 const cursorRing = document.getElementById("cursor-ring");
 
 if (window.matchMedia("(pointer: fine)").matches) {
     let mouseX = 0, mouseY = 0;
-    let ringX  = 0, ringY  = 0;
+    let ringX = 0, ringY = 0;
     let rafId;
 
     document.addEventListener("mousemove", e => {
         mouseX = e.clientX;
         mouseY = e.clientY;
         cursorDot.style.left = mouseX + "px";
-        cursorDot.style.top  = mouseY + "px";
+        cursorDot.style.top = mouseY + "px";
     });
 
     // Smooth ring follow via rAF
@@ -54,7 +54,7 @@ if (window.matchMedia("(pointer: fine)").matches) {
         ringX += (mouseX - ringX) * 0.12;
         ringY += (mouseY - ringY) * 0.12;
         cursorRing.style.left = ringX + "px";
-        cursorRing.style.top  = ringY + "px";
+        cursorRing.style.top = ringY + "px";
         rafId = requestAnimationFrame(animateRing);
     }
     animateRing();
@@ -83,24 +83,24 @@ if (window.matchMedia("(pointer: fine)").matches) {
 
     // Hide cursor when leaving window
     document.addEventListener("mouseleave", () => {
-        cursorDot.style.opacity  = "0";
+        cursorDot.style.opacity = "0";
         cursorRing.style.opacity = "0";
     });
     document.addEventListener("mouseenter", () => {
-        cursorDot.style.opacity  = "1";
+        cursorDot.style.opacity = "1";
         cursorRing.style.opacity = "1";
     });
 }
 
 /* ---- TYPING ANIMATION ---- */
 const typingEl = document.querySelector(".typing");
-const words  = ["a Developer", "a Coder", "a Creator"];
+const words = ["a Developer", "a Coder", "a Creator"];
 const colors = ["#e8e4dc", "#9eb8a0", "#b8a49e", "#a09eb8"];
 
 let wordIdx = 0, charIdx = 0, deleting = false;
 
 function typeEffect() {
-    const word  = words[wordIdx];
+    const word = words[wordIdx];
     const color = colors[wordIdx];
     typingEl.style.color = color;
 
@@ -116,8 +116,8 @@ function typeEffect() {
         typingEl.textContent = word.substring(0, charIdx - 1);
         charIdx--;
         if (charIdx === 0) {
-            deleting  = false;
-            wordIdx   = (wordIdx + 1) % words.length;
+            deleting = false;
+            wordIdx = (wordIdx + 1) % words.length;
         }
     }
     setTimeout(typeEffect, deleting ? 75 : 130);
@@ -163,6 +163,81 @@ document.querySelectorAll(".tab").forEach(tab => {
     });
 });
 
+
+(function() {
+    const tbody = document.getElementById('term-body');
+    if (!tbody) return;
+    const sequences = [
+        { type: 'cmd', text: 'whoami' },
+        {
+            type: 'out', lines: [
+                [{ k: 'name', v: '"Kartik Maheshwari"', t: 'str' }],
+                [{ k: 'role', v: '"Full Stack Dev"', t: 'str' }],
+                [{ k: 'location', v: '"India"', t: 'str' }],
+            ]
+        },
+        { type: 'gap' },
+        { type: 'cmd', text: 'ls projects/' },
+        {
+            type: 'out', lines: [
+                [{ k: '', v: 'NeuroVault', t: 'str' }, { k: '', v: 'TypingBud', t: 'str' }, { k: '', v: 'Captionly', t: 'str' }],
+            ]
+        },
+        { type: 'gap' },
+        { type: 'cmd', text: 'cat status.json' },
+        {
+            type: 'out', lines: [
+                [{ k: 'available', v: 'true', t: 'bool' }],
+                [{ k: 'openTo', v: '"opportunities"', t: 'str' }],
+                [{ k: 'dsa', v: '250+', t: 'num' }, { k: '', v: 'solved', t: 'key' }],
+            ]
+        },
+        { type: 'cursor' },
+    ];
+    function mkLine(html) {
+        const d = document.createElement('div');
+        d.className = 'term-line';
+        d.style.cssText = 'opacity:0;transform:translateY(4px);transition:opacity 0.2s ease,transform 0.2s ease';
+        d.innerHTML = html;
+        tbody.appendChild(d);
+        requestAnimationFrame(() => { d.style.opacity = '1'; d.style.transform = 'translateY(0)'; });
+        return d;
+    }
+    function renderOut(items) {
+        return items.map(item =>
+            item.k
+                ? `<span class="term-key">${item.k}:</span><span class="term-${item.t}"> ${item.v}</span>`
+                : `<span class="term-${item.t}">${item.v}</span>`
+        ).join('&nbsp; ');
+    }
+    let si = 0;
+    function next() {
+        if (si >= sequences.length) return;
+        const s = sequences[si++];
+        if (s.type === 'gap') {
+            mkLine(''); setTimeout(next, 100);
+        } else if (s.type === 'cmd') {
+            const line = mkLine(`<span class="term-prompt">❯</span><span class="term-cmd" id="tc${si}"></span><span class="term-cursor-el"></span>`);
+            const cmdEl = line.querySelector(`#tc${si}`);
+            const curEl = line.querySelector('.term-cursor-el');
+            let ci = 0;
+            (function typeChar() {
+                if (ci < s.text.length) { cmdEl.textContent += s.text[ci++]; setTimeout(typeChar, 55 + Math.random() * 45); }
+                else { curEl.remove(); setTimeout(next, 180); }
+            })();
+        } else if (s.type === 'out') {
+            let li = 0;
+            (function addOut() {
+                if (li < s.lines.length) { mkLine(renderOut(s.lines[li++])); setTimeout(addOut, 110); }
+                else { setTimeout(next, 350); }
+            })();
+        } else if (s.type === 'cursor') {
+            mkLine(`<span class="term-prompt">❯</span><span class="term-cursor-el"></span>`);
+            setTimeout(() => { tbody.innerHTML = ''; si = 0; next(); }, 4000);
+        }
+    }
+    setTimeout(next, 900);
+})();
 /* ============================================
    SCROLL ANIMATIONS
    ============================================ */
@@ -186,7 +261,7 @@ const fadeInObserver = new IntersectionObserver((entries) => {
 document.querySelectorAll(".fade-in-element").forEach(el => fadeInObserver.observe(el));
 
 /* ---- ACTIVE NAV LINK ON SCROLL ---- */
-const sections    = document.querySelectorAll("section[id]");
+const sections = document.querySelectorAll("section[id]");
 const allNavLinks = document.querySelectorAll(".nav-link");
 
 const sectionObserver = new IntersectionObserver((entries) => {
@@ -209,7 +284,7 @@ const CHARS = "!<>-_\\/[]{}—=+*^?#abcdefghijklmnopqrstuvwxyz";
 
 class TextScramble {
     constructor(el) {
-        this.el    = el;
+        this.el = el;
         this.original = el.textContent;
         this.queue = [];
         this.frame = 0;
@@ -218,15 +293,15 @@ class TextScramble {
 
     setText(text) {
         const oldText = this.el.textContent;
-        const len     = Math.max(oldText.length, text.length);
+        const len = Math.max(oldText.length, text.length);
         return new Promise(resolve => {
             this.resolve = resolve;
-            this.queue   = [];
+            this.queue = [];
             for (let i = 0; i < len; i++) {
-                const from  = oldText[i] || '';
-                const to    = text[i] || '';
+                const from = oldText[i] || '';
+                const to = text[i] || '';
                 const start = Math.floor(Math.random() * 12);
-                const end   = start + Math.floor(Math.random() * 16);
+                const end = start + Math.floor(Math.random() * 16);
                 this.queue.push({ from, to, start, end, char: '' });
             }
             cancelAnimationFrame(this.frame);
@@ -236,7 +311,7 @@ class TextScramble {
     }
 
     update() {
-        let output  = '';
+        let output = '';
         let complete = 0;
         for (const item of this.queue) {
             const { from, to, start, end } = item;
@@ -289,13 +364,13 @@ document.querySelectorAll("[data-scramble]").forEach(el => {
    ============================================ */
 document.querySelectorAll(".project-card").forEach(card => {
     card.addEventListener("mousemove", e => {
-        const rect   = card.getBoundingClientRect();
-        const cx     = rect.left + rect.width  / 2;
-        const cy     = rect.top  + rect.height / 2;
-        const dx     = (e.clientX - cx) / (rect.width  / 2);
-        const dy     = (e.clientY - cy) / (rect.height / 2);
-        const tiltX  = dy * -5;   // max ±5 deg
-        const tiltY  = dx *  5;
+        const rect = card.getBoundingClientRect();
+        const cx = rect.left + rect.width / 2;
+        const cy = rect.top + rect.height / 2;
+        const dx = (e.clientX - cx) / (rect.width / 2);
+        const dy = (e.clientY - cy) / (rect.height / 2);
+        const tiltX = dy * -5;   // max ±5 deg
+        const tiltY = dx * 5;
         card.style.transform = `perspective(800px) rotateX(${tiltX}deg) rotateY(${tiltY}deg) scale(1.012)`;
         card.style.boxShadow = `${-dx * 10}px ${-dy * 10}px 30px rgba(0,0,0,0.35)`;
     });
@@ -312,8 +387,8 @@ if (window.matchMedia("(pointer: fine)").matches) {
     document.querySelectorAll(".btn-primary, .btn-ghost").forEach(btn => {
         btn.addEventListener("mousemove", e => {
             const rect = btn.getBoundingClientRect();
-            const dx   = e.clientX - (rect.left + rect.width  / 2);
-            const dy   = e.clientY - (rect.top  + rect.height / 2);
+            const dx = e.clientX - (rect.left + rect.width / 2);
+            const dy = e.clientY - (rect.top + rect.height / 2);
             btn.style.transform = `translate(${dx * 0.18}px, ${dy * 0.22}px)`;
         });
         btn.addEventListener("mouseleave", () => {
@@ -336,15 +411,15 @@ function showToast(msg) {
    CONTACT FORM (EmailJS)
    ============================================ */
 const loadingOverlay = document.getElementById("loading-overlay");
-const form       = document.getElementById("contact-form");
-const SERVICE_ID  = "service_2cxf47d";
+const form = document.getElementById("contact-form");
+const SERVICE_ID = "service_2cxf47d";
 const TEMPLATE_ID = "template_vfd2jvl";
 
 form.addEventListener("submit", (e) => {
     e.preventDefault();
     const params = {
-        name:    document.getElementById("name").value,
-        email:   document.getElementById("email").value,
+        name: document.getElementById("name").value,
+        email: document.getElementById("email").value,
         message: document.getElementById("message").value,
     };
     loadingOverlay.classList.add("active");
