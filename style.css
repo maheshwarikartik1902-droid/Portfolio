@@ -407,6 +407,7 @@ section {
     flex-shrink: 0;
     opacity: 0;
     animation: fadeIn 1s ease 0.6s forwards;
+    animation-delay: 1.5s;
 }
 
 /* ---- HERO TERMINAL ---- */

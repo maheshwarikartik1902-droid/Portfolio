@@ -233,10 +233,10 @@ document.querySelectorAll(".tab").forEach(tab => {
             })();
         } else if (s.type === 'cursor') {
             mkLine(`<span class="term-prompt">❯</span><span class="term-cursor-el"></span>`);
-            setTimeout(() => { tbody.innerHTML = ''; si = 0; next(); }, 4000);
+            //setTimeout(() => { tbody.innerHTML = ''; si = 0; next(); }, 4000);
         }
     }
-    setTimeout(next, 900);
+    setTimeout(next, 2000);
 })();
 /* ============================================
    SCROLL ANIMATIONS
