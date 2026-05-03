@@ -619,7 +619,7 @@ section {
 .projects-list {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-    gap: 1px; border: 1px solid var(--border);
+    gap: 2px; 
 }
 .project-card {
     background: var(--bg-card); overflow: hidden;
@@ -675,6 +675,11 @@ section {
 }
 .project-desc { font-size: 0.8rem; color: var(--text-muted); line-height: 1.65; }
 
+.project-card:last-child:nth-child(odd) {
+    grid-column: 1 / -1;
+    max-width: calc(50% - 0.5px);
+    margin-inline: auto;
+}
 /* ---- CONTACT ---- */
 .contact-grid {
     display: grid; grid-template-columns: 1fr 1fr;

@@ -164,7 +164,7 @@ document.querySelectorAll(".tab").forEach(tab => {
 });
 
 
-(function() {
+(function () {
     const tbody = document.getElementById('term-body');
     if (!tbody) return;
     const sequences = [
@@ -232,12 +232,20 @@ document.querySelectorAll(".tab").forEach(tab => {
                 else { setTimeout(next, 350); }
             })();
         } else if (s.type === 'cursor') {
-            mkLine(`<span class="term-prompt">❯</span><span class="term-cursor-el"></span>`);
+            const line = mkLine(`<span class="term-prompt">❯</span><span class="term-cursor-el"></span>`);
             //setTimeout(() => { tbody.innerHTML = ''; si = 0; next(); }, 4000);
+            setTimeout(() => {
+                const cursor = line.querySelector('.term-cursor-el');
+                if (cursor) {
+                    cursor.style.animation = 'none';
+                    cursor.style.opacity = '0';
+                }
+            }, 3000);
         }
     }
     setTimeout(next, 2000);
 })();
+
 /* ============================================
    SCROLL ANIMATIONS
    ============================================ */
@@ -259,6 +267,19 @@ const fadeInObserver = new IntersectionObserver((entries) => {
     });
 }, { threshold: 0.08 });
 document.querySelectorAll(".fade-in-element").forEach(el => fadeInObserver.observe(el));
+
+/* ---- LAZY LOAD IMAGES ON INTERSECTION ---- */
+const lazyObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            const img = entry.target;
+            img.src = img.dataset.src;
+            lazyObserver.unobserve(img); // load once, stop watching
+        }
+    });
+},  { rootMargin: '50px 0px' });
+
+document.querySelectorAll('.lazy-img').forEach(img => lazyObserver.observe(img));
 
 /* ---- ACTIVE NAV LINK ON SCROLL ---- */
 const sections = document.querySelectorAll("section[id]");
