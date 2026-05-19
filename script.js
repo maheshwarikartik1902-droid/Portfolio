@@ -1,6 +1,65 @@
-/* ============================================
-   KARTIK MAHESHWARI — PORTFOLIO · script.js
-   ============================================ */
+/* KARTIK MAHESHWARI — PORTFOLIO · script.js*/
+
+
+
+/* ---- api for solved questions ---- */
+// Fetch on page load, cache for 24h
+const HARDCODED_STATS = {
+    leetcode: 230,
+    gfg: 35
+};
+let dsaCount = HARDCODED_STATS.leetcode + HARDCODED_STATS.gfg;
+let terminalTimeout = false;
+const statsTimeout = setTimeout(() => {
+    terminalTimeout = true;
+    initTerminal()
+}, 5000);
+
+
+async function fetchStats() {
+    // LeetCode
+    let leetcode = HARDCODED_STATS.leetcode;
+    let gfg = HARDCODED_STATS.gfg;
+
+    try {
+        const res = await fetch("https://alfa-leetcode-api.onrender.com/<your-username>/solved");
+        if (!res.ok) throw new Error();
+
+        const contentType = res.headers.get("content-type");
+        if (!contentType || !contentType.includes("application/json")) throw new Error();
+
+        const data = await res.json();
+        if (!data.solvedProblem) throw new Error();        // guard 
+        leetcode = data.solvedProblem;
+    } catch {
+        console.log("Failed to fetch LeetCode stats");
+        leetcode = HARDCODED_STATS.leetcode;
+    }
+
+    // GFG
+    try {
+        const res = await fetch("https://gfg-stats.tashif.codes/<your-username>");
+        if (!res.ok) throw new Error();
+
+        const contentType = res.headers.get("content-type");
+        if (!contentType || !contentType.includes("application/json")) throw new Error();
+
+        const data = await res.json();
+        if (!data.totalProblemsSolved) throw new Error();  // guard 
+        gfg = data.totalProblemsSolved;
+    } catch {
+        gfg = HARDCODED_STATS.gfg;
+    }
+    dsaCount = Number(leetcode) + Number(gfg);
+    console.log(leetcode, gfg);
+    document.getElementById("leetcode+gfg").textContent = `${dsaCount}+`;
+    clearTimeout(statsTimeout);
+    if (!terminalTimeout) initTerminal();
+}
+
+fetchStats();
+
+
 
 /* ---- SCROLL PROGRESS ---- */
 const scrollBar = document.getElementById("scroll-progress");
@@ -164,9 +223,10 @@ document.querySelectorAll(".tab").forEach(tab => {
 });
 
 
-(function () {
+const initTerminal = function () {
     const tbody = document.getElementById('term-body');
     if (!tbody) return;
+
     const sequences = [
         { type: 'cmd', text: 'whoami' },
         {
@@ -189,7 +249,7 @@ document.querySelectorAll(".tab").forEach(tab => {
             type: 'out', lines: [
                 [{ k: 'available', v: 'true', t: 'bool' }],
                 [{ k: 'openTo', v: '"opportunities"', t: 'str' }],
-                [{ k: 'dsa', v: '250+', t: 'num' }, { k: '', v: 'solved', t: 'key' }],
+                [{ k: 'dsa', v: `${dsaCount}+`, t: 'num' }, { k: '', v: 'solved', t: 'key' }],
             ]
         },
         { type: 'cursor' },
@@ -243,8 +303,12 @@ document.querySelectorAll(".tab").forEach(tab => {
             }, 3000);
         }
     }
-    setTimeout(next, 2000);
-})();
+    setTimeout(() => {
+        next();
+        tbody.closest('.hero-terminal').classList.add('ready');
+        tbody.classList.add('ready');
+    }, 2000);
+};
 
 /* ============================================
    SCROLL ANIMATIONS
@@ -277,7 +341,7 @@ const lazyObserver = new IntersectionObserver((entries) => {
             lazyObserver.unobserve(img); // load once, stop watching
         }
     });
-},  { rootMargin: '50px 0px' });
+}, { rootMargin: '50px 0px' });
 
 document.querySelectorAll('.lazy-img').forEach(img => lazyObserver.observe(img));
 

@@ -417,6 +417,11 @@ section {
     background: #0b0b0b;
     border: 1px solid var(--border);
     flex-shrink: 0;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+.hero-terminal.ready {
+    opacity: 1;
 }
 .term-bar {
     background: #141414;
@@ -441,6 +446,11 @@ section {
 .term-body {
     padding: 16px 18px;
     min-height: 220px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+.term-body.ready {
+    opacity: 1;
 }
 .term-line {
     font-size: 0.72rem;
