@@ -22,7 +22,7 @@ async function fetchStats() {
     let gfg = HARDCODED_STATS.gfg;
 
     try {
-        const res = await fetch("https://alfa-leetcode-api.onrender.com/<your-username>/solved");
+        const res = await fetch("https://alfa-leetcode-api.onrender.com/kartik_maheshwari/solved");
         if (!res.ok) throw new Error();
 
         const contentType = res.headers.get("content-type");
@@ -32,13 +32,13 @@ async function fetchStats() {
         if (!data.solvedProblem) throw new Error();        // guard 
         leetcode = data.solvedProblem;
     } catch {
-        console.log("Failed to fetch LeetCode stats");
+
         leetcode = HARDCODED_STATS.leetcode;
     }
 
     // GFG
     try {
-        const res = await fetch("https://gfg-stats.tashif.codes/<your-username>");
+        const res = await fetch("https://gfg-stats.tashif.codes/maheshwarikdwe9");
         if (!res.ok) throw new Error();
 
         const contentType = res.headers.get("content-type");
@@ -51,8 +51,11 @@ async function fetchStats() {
         gfg = HARDCODED_STATS.gfg;
     }
     dsaCount = Number(leetcode) + Number(gfg);
-    console.log(leetcode, gfg);
     document.getElementById("leetcode+gfg").textContent = `${dsaCount}+`;
+
+    const termDsa = document.getElementById("term-dsa");
+    if (termDsa) termDsa.textContent = `${dsaCount}+`;
+
     clearTimeout(statsTimeout);
     if (!terminalTimeout) initTerminal();
 }
@@ -249,7 +252,7 @@ const initTerminal = function () {
             type: 'out', lines: [
                 [{ k: 'available', v: 'true', t: 'bool' }],
                 [{ k: 'openTo', v: '"opportunities"', t: 'str' }],
-                [{ k: 'dsa', v: `${dsaCount}+`, t: 'num' }, { k: '', v: 'solved', t: 'key' }],
+                [{ k: 'dsa', v: `<span id="term-dsa">${dsaCount}+</span>`, t: 'num' }, { k: '', v: 'solved', t: 'key' }]
             ]
         },
         { type: 'cursor' },
