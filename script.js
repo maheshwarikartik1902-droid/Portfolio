@@ -14,7 +14,7 @@ const statsTimeout = setTimeout(() => {
     terminalTimeout = true;
     initTerminal()
 }, 5000);
-
+document.getElementById("leetcode+gfg").textContent = `${dsaCount}+`;
 
 async function fetchStats() {
     // LeetCode
@@ -310,7 +310,7 @@ const initTerminal = function () {
         next();
         tbody.closest('.hero-terminal').classList.add('ready');
         tbody.classList.add('ready');
-    }, 2000);
+    }, 1000);
 };
 
 /* ============================================
