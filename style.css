@@ -580,50 +580,104 @@ section {
 .list-clean.edu .year { color: var(--text-dim); font-size: 0.75rem; }
 
 /* ---- SKILLS ---- */
-.skills-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-    gap: 1px; border: 1px solid var(--border);
+.skills-manifest {
+    display: flex;
+    flex-direction: column;
 }
-.skill-group {
-    padding: 2rem; background: var(--bg-card);
-    border: none;
-    transition: background 0.25s;
-    position: relative; overflow: hidden;
-}
-.skill-group::after {
-    content: '';
-    position: absolute; bottom: 0; left: 0;
-    width: 0; height: 1px;
-    background: var(--text-muted);
-    transition: width 0.35s ease;
-}
-.skill-group:hover::after { width: 100%; }
-.skill-group:hover { background: var(--bg-2); }
 
-.skill-group-label {
-    font-size: 0.65rem; letter-spacing: 0.15em;
-    text-transform: uppercase; color: var(--text-dim); margin-bottom: 1.5rem;
+.skill-row {
+    display: grid;
+    grid-template-columns: 0.5fr 1fr;
+    align-items: center;
+    gap: 2rem;
+    padding: 1.4rem 0;
+    border-bottom: 1px solid var(--border);
+    transition: all 0.2s;
 }
-.skill-items { display: flex; flex-wrap:wrap; gap: 1rem; flex-direction: row; align-items: center; justify-content: space-around;}
-.skill-item {
-    display: grid; flex-direction: column; align-items: center; gap: 0.5rem;
-    cursor: none;
+.skill-row:first-child { border-top: 1px solid var(--border); }
+
+.skill-row:hover { 
+    background: var(--bg-card); 
+    padding-left: 1rem; 
+    padding-right: 1rem; 
+    margin: 0 -1rem; 
 }
-.skill-item img {
-    width: 32px; height: 32px; object-fit: contain;
-    filter: grayscale(60%) brightness(0.9);
-    transition: filter 0.35s, transform 0.35s cubic-bezier(0.34,1.56,0.64,1);
+
+.skill-row-label {
+    font-size: 0.65rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--text-dim);
+    flex-shrink: 0;
+    transition: all 0.3s;
 }
-.skill-item:hover img {
-    filter: grayscale(0) brightness(1.05);
-    transform: scale(1.18) translateY(-2px);
+.skill-row:hover .skill-row-label { 
+    color: var(--text);
+    transform: translateX(3%);
+
 }
-.skill-item span {
-    font-size: 0.7rem; color: var(--text-dim); letter-spacing: 0.06em;
-    transition: color 0.2s;
+
+.skill-row-items {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
 }
-.skill-item:hover span { color: var(--text-muted); }
+
+.skill-tag {
+    font-family: var(--mono);
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    border: 1px solid var(--border);
+    padding: 0.25rem 0.65rem;
+    letter-spacing: 0.04em;
+    transition: color 0.2s, border-color 0.2s;
+    cursor: default;
+    position: relative;
+    overflow: hidden;
+}
+.skill-tag::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: var(--text);
+    transform: translateX(-101%);
+    transition: transform 0.25s ease;
+    z-index: 0;
+}
+.skill-tag span {
+    position: relative;
+    z-index: 1;
+}
+.skill-row:hover .skill-tag:hover::before {
+    transform: translateX(0);
+}
+.skill-row:hover .skill-tag:hover {
+    color: var(--bg);
+    border-color: var(--text);
+}
+
+.skill-row:hover .skill-tag {
+    color: var(--text);
+    border-color: rgba(255,255,255,0.18);
+}
+
+.skill-row-level {
+    font-size: 0.65rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--text-dim);
+    text-align: right;
+    flex-shrink: 0;
+}
+
+@media (max-width: 600px) {
+    .skill-row {
+        grid-template-columns: 1fr;
+        gap: 0.75rem;
+    }
+    .skill-row-level { text-align: left; }
+    .skill-row:hover { padding-left: 0; padding-right: 0; margin: 0; }
+}
 
 /* ---- PROJECTS ---- */
 .projects-list {

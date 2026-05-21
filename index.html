@@ -11,370 +11,373 @@
         href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300&family=Syne:wght@400;500;600;700;800&display=block"
         rel="stylesheet">
     <link rel="stylesheet" href="style.css" />
+    <script src="config.js"></script>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
     </script>
     <script type="text/javascript">
         (function () {
             emailjs.init({
-                publicKey: "rfg-Mq73vFzGTh8Qk", // use your own public key
+                publicKey: (CONFIG.emailjs_key), // use your own public key
             });
         })();
     </script>
-</head
+</head <body>
 
-<body>
+<!-- Custom Cursor -->
+<div id="cursor-dot"></div>
+<div id="cursor-ring"></div>
 
-    <!-- Custom Cursor -->
-    <div id="cursor-dot"></div>
-    <div id="cursor-ring"></div>
+<!-- Scroll Progress -->
+<div id="scroll-progress"></div>
 
-    <!-- Scroll Progress -->
-    <div id="scroll-progress"></div>
+<!-- Loading Overlay -->
+<div id="loading-overlay">
+    <div class="loader-ring"></div>
+</div>
 
-    <!-- Loading Overlay -->
-    <div id="loading-overlay">
-        <div class="loader-ring"></div>
-    </div>
+<!-- Toast -->
+<div id="toast"></div>
 
-    <!-- Toast -->
-    <div id="toast"></div>
+<!-- NAV -->
+<nav id="navbar">
+    <a href="#home" class="nav-logo">KM<span class="dot">.</span><span class="nav-status-dot"></span></a>
+    <ul id="nav-links">
+        <li><a href="#home" class="nav-link">Home</a></li>
+        <li><a href="#about-section" class="nav-link">About</a></li>
+        <li><a href="#skills" class="nav-link">Skills</a></li>
+        <li><a href="#projects" class="nav-link">Projects</a></li>
+        <li><a href="#contact" class="nav-link">Contact</a></li>
+    </ul>
+    <a href="assets\Resume\KartikMaheshwari Resume.pdf" class="nav-resume" target="_blank">Resume ↗</a>
+    <button id="hamburger" aria-label="Toggle menu">
+        <span></span><span></span>
+    </button>
+</nav>
 
-    <!-- NAV -->
-    <nav id="navbar">
-        <a href="#home" class="nav-logo">KM<span class="dot">.</span><span class="nav-status-dot"></span></a>
-        <ul id="nav-links">
-            <li><a href="#home" class="nav-link">Home</a></li>
-            <li><a href="#about-section" class="nav-link">About</a></li>
-            <li><a href="#skills" class="nav-link">Skills</a></li>
-            <li><a href="#projects" class="nav-link">Projects</a></li>
-            <li><a href="#contact" class="nav-link">Contact</a></li>
-        </ul>
-        <a href="assets/Resume/KartikMaheshwari Resume.pdf" class="nav-resume" target="_blank">Resume ↗</a>
-        <button id="hamburger" aria-label="Toggle menu">
-            <span></span><span></span>
-        </button>
-    </nav>
-
-    <!-- HERO -->
-    <section id="home" class="hero">
-        <div class="hero-grid-bg" aria-hidden="true"></div>
-        <div class="hero-index">01</div>
-        <div class="hero-content">
-            <p class="hero-label">Full Stack Developer · India</p>
-            <h1 class="hero-name">Kartik<br>Maheshwari</h1>
-            <p class="hero-tagline">I am <span class="typing"></span><span class="cursor">|</span></p>
-            <p class="hero-desc">Building robust, end-to-end web applications from sleek frontends to efficient
-                backends.</p>
-            <div class="hero-actions">
-                <a href="#projects" class="btn-primary">View Work</a>
-                <a href="#contact" class="btn-ghost">Get In Touch</a>
-            </div>
-        </div>
-        <div class="hero-right">
-            <div class="hero-terminal" id="hero-terminal">
-                <div class="term-bar">
-                    <div class="term-dot"></div>
-                    <div class="term-dot"></div>
-                    <div class="term-dot"></div>
-                    <span class="term-title">kartik@portfolio ~</span>
-                </div>
-                <div class="term-body" id="term-body"></div>
-            </div>
-        </div>
-        <div class="hero-scroll">
-            <span>scroll</span>
-            <div class="scroll-line"></div>
-        </div>
-    </section>
-
-    <!-- TECH TICKER -->
-    <div class="tech-ticker" aria-hidden="true">
-        <div class="ticker-track">
-            <span class="ticker-item">JavaScript <span class="tick-sep">·</span></span>
-            <span class="ticker-item">React.js <span class="tick-sep">·</span></span>
-            <span class="ticker-item">Next.js <span class="tick-sep">·</span></span>
-            <span class="ticker-item">Node.js <span class="tick-sep">·</span></span>
-            <span class="ticker-item">Express.js <span class="tick-sep">·</span></span>
-            <span class="ticker-item">TailwindCSS <span class="tick-sep">·</span></span>
-            <span class="ticker-item">MongoDB <span class="tick-sep">·</span></span>
-            <span class="ticker-item">C++ <span class="tick-sep">·</span></span>
-            <span class="ticker-item">shadcn/ui <span class="tick-sep">·</span></span>
-            <span class="ticker-item">GitHub <span class="tick-sep">·</span></span>
-            <span class="ticker-item">REST APIs <span class="tick-sep">·</span></span>
-            <!-- duplicate for seamless loop -->
-            <span class="ticker-item">JavaScript <span class="tick-sep">·</span></span>
-            <span class="ticker-item">React.js <span class="tick-sep">·</span></span>
-            <span class="ticker-item">Next.js <span class="tick-sep">·</span></span>
-            <span class="ticker-item">Node.js <span class="tick-sep">·</span></span>
-            <span class="ticker-item">Express.js <span class="tick-sep">·</span></span>
-            <span class="ticker-item">TailwindCSS <span class="tick-sep">·</span></span>
-            <span class="ticker-item">MongoDB <span class="tick-sep">·</span></span>
-            <span class="ticker-item">C++ <span class="tick-sep">·</span></span>
-            <span class="ticker-item">shadcn/ui <span class="tick-sep">·</span></span>
-            <span class="ticker-item">GitHub <span class="tick-sep">·</span></span>
-            <span class="ticker-item">REST APIs <span class="tick-sep">·</span></span>
+<!-- HERO -->
+<section id="home" class="hero">
+    <div class="hero-grid-bg" aria-hidden="true"></div>
+    <div class="hero-index">01</div>
+    <div class="hero-content">
+        <p class="hero-label">Full Stack Developer · India</p>
+        <h1 class="hero-name">Kartik<br>Maheshwari</h1>
+        <p class="hero-tagline">I am <span class="typing"></span><span class="cursor">|</span></p>
+        <p class="hero-desc">Building robust, end-to-end web applications from sleek frontends to efficient
+            backends.</p>
+        <div class="hero-actions">
+            <a href="#projects" class="btn-primary">View Work</a>
+            <a href="#contact" class="btn-ghost">Get In Touch</a>
         </div>
     </div>
-
-    <!-- ABOUT -->
-    <section id="about-section" class="about fade-up-element">
-        <div class="section-header">
-            <span class="section-num">02</span>
-            <h2 class="section-title" data-scramble>About</h2>
+    <div class="hero-right">
+        <div class="hero-terminal" id="hero-terminal">
+            <div class="term-bar">
+                <div class="term-dot"></div>
+                <div class="term-dot"></div>
+                <div class="term-dot"></div>
+                <span class="term-title">kartik@portfolio ~</span>
+            </div>
+            <div class="term-body" id="term-body"></div>
         </div>
-        <div class="about-grid">
-            <div class="about-bio">
-                <p>I'm <strong>Kartik Maheshwari</strong>, a Full Stack Developer experienced in building web
-                    applications with React.js, Next.js, Node.js, and MongoDB.</p>
-                <p>I focus on robust, efficient, and user-centric end-to-end solutions — from sleek frontends to
-                    scalable backends and AI-powered integrations.</p>
-                <div class="about-meta">
-                    <div class="meta-item">
-                        <span class="meta-key">Role</span>
-                        <span class="meta-val">Full Stack Developer</span>
-                    </div>
-                    <div class="meta-item">
-                        <span class="meta-key">Location</span>
-                        <span class="meta-val">India</span>
-                    </div>
-                    <div class="meta-item">
-                        <span class="meta-key">Specialty</span>
-                        <span class="meta-val">Full-Stack Development</span>
-                    </div>
-                </div>
-            </div>
-            <div class="about-tabs-wrap">
-                <div class="tabs">
-                    <button class="tab active" data-tab="languages">Languages</button>
-                    <button class="tab" data-tab="accomplishments">Achievements</button>
-                    <button class="tab" data-tab="education">Education</button>
-                </div>
-                <div id="languages" class="content active">
-                    <ul class="list-clean">
-                        <li>JavaScript</li>
-                        <li>HTML / CSS</li>
-                        <li>C++</li>
-                    </ul>
-                </div>
-                <div id="accomplishments" class="content">
-                    <ul class="list-clean">
-                        <li>Ranked top 5 in academic batch</li>
-                        <li><span id="leetcode+gfg"></span> DSA problems on LeetCode & GFG</li>
-                    </ul>
-                </div>
-                <div id="education" class="content">
-                    <ul class="list-clean edu">
-                        <li>
-                            <strong>B.Tech CSE (AI & ML)</strong><br>
-                            G.B.Pant Institute of Engineering & Technology<br>
-                            <span class="year">2022 – 2026</span>
-                        </li>
-                        <li>
-                            <strong>Senior Secondary</strong><br>
-                            St. Peters School, Kichha
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-        </div> <!-- end about-grid -->
+    </div>
+    <div class="hero-scroll">
+        <span>scroll</span>
+        <div class="scroll-line"></div>
+    </div>
+</section>
 
-        <div class="about-graphs">
-            <div class="about-graph-card">
-                <p class="skill-group-label">GitHub Activity</p>
-                <img data-src="https://github-readme-activity-graph.vercel.app/graph?username=maheshwarikartik1902-droid&bg_color=0b0b0b&color=6b6762&line=9eb8a0&point=e8e4dc&area=true&hide_border=true&area_color=9eb8a0&title_color=3a3835"
-                    alt="GitHub Activity Graph" class="about-graph-img lazy-img" />
-            </div>
-        </div>
-    </section>
+<!-- TECH TICKER -->
+<div class="tech-ticker" aria-hidden="true">
+    <div class="ticker-track">
+        <span class="ticker-item">JavaScript <span class="tick-sep">·</span></span>
+        <span class="ticker-item">React.js <span class="tick-sep">·</span></span>
+        <span class="ticker-item">Next.js <span class="tick-sep">·</span></span>
+        <span class="ticker-item">Node.js <span class="tick-sep">·</span></span>
+        <span class="ticker-item">Express.js <span class="tick-sep">·</span></span>
+        <span class="ticker-item">TailwindCSS <span class="tick-sep">·</span></span>
+        <span class="ticker-item">MongoDB <span class="tick-sep">·</span></span>
+        <span class="ticker-item">C++ <span class="tick-sep">·</span></span>
+        <span class="ticker-item">shadcn/ui <span class="tick-sep">·</span></span>
+        <span class="ticker-item">GitHub <span class="tick-sep">·</span></span>
+        <span class="ticker-item">REST APIs <span class="tick-sep">·</span></span>
+        <!-- duplicate for seamless loop -->
+        <span class="ticker-item">JavaScript <span class="tick-sep">·</span></span>
+        <span class="ticker-item">React.js <span class="tick-sep">·</span></span>
+        <span class="ticker-item">Next.js <span class="tick-sep">·</span></span>
+        <span class="ticker-item">Node.js <span class="tick-sep">·</span></span>
+        <span class="ticker-item">Express.js <span class="tick-sep">·</span></span>
+        <span class="ticker-item">TailwindCSS <span class="tick-sep">·</span></span>
+        <span class="ticker-item">MongoDB <span class="tick-sep">·</span></span>
+        <span class="ticker-item">C++ <span class="tick-sep">·</span></span>
+        <span class="ticker-item">shadcn/ui <span class="tick-sep">·</span></span>
+        <span class="ticker-item">GitHub <span class="tick-sep">·</span></span>
+        <span class="ticker-item">REST APIs <span class="tick-sep">·</span></span>
+    </div>
+</div>
 
-
-    <!-- SKILLS -->
-    <section id="skills" class="skills fade-up-element">
-        <div class="section-header">
-            <span class="section-num">03</span>
-            <h2 class="section-title" data-scramble>Skills</h2>
-        </div>
-        <div class="skills-grid">
-            <div class="skill-group fade-in-element">
-                <p class="skill-group-label">Languages</p>
-                <div class="skill-items">
-                    <div class="skill-item">
-                        <img src="assets/icons/js.webp" alt="JavaScript"><span>JavaScript</span>
-                    </div>
-                    <div class="skill-item">
-                        <img src="assets/icons/cpp.png" alt="C++"><span>C++</span>
-                    </div>
+<!-- ABOUT -->
+<section id="about-section" class="about fade-up-element">
+    <div class="section-header">
+        <span class="section-num">02</span>
+        <h2 class="section-title" data-scramble>About</h2>
+    </div>
+    <div class="about-grid">
+        <div class="about-bio">
+            <p>I'm <strong>Kartik Maheshwari</strong>, a Full Stack Developer experienced in building web
+                applications with React.js, Next.js, Node.js, and MongoDB.</p>
+            <p>I focus on robust, efficient, and user-centric end-to-end solutions — from sleek frontends to
+                scalable backends and AI-powered integrations.</p>
+            <div class="about-meta">
+                <div class="meta-item">
+                    <span class="meta-key">Role</span>
+                    <span class="meta-val">Full Stack Developer</span>
                 </div>
-            </div>
-            <div class="skill-group fade-in-element">
-                <p class="skill-group-label">Frontend</p>
-                <div class="skill-items">
-                    <div class="skill-item">
-                        <img src="assets/icons/React.png" alt="React"><span>React.js</span>
-                    </div>
-                    <div class="skill-item">
-                        <img src="assets/icons/nextjs.png" alt="Next.js"><span>Next.js</span>
-                    </div>
-                    <div class="skill-item">
-                        <img src="assets/icons/tailwind-css.png" alt="Tailwind"><span>TailwindCSS</span>
-                    </div>
-                    <div class="skill-item">
-                        <img src="assets/icons/shadcn.png" alt="shadcn"><span>shadcn/ui</span>
-                    </div>
+                <div class="meta-item">
+                    <span class="meta-key">Location</span>
+                    <span class="meta-val">India</span>
                 </div>
-            </div>
-            <div class="skill-group fade-in-element">
-                <p class="skill-group-label">Backend</p>
-                <div class="skill-items">
-                    <div class="skill-item">
-                        <img src="assets/icons/nodejs.png" alt="Node.js"><span>Node.js</span>
-                    </div>
-                    <div class="skill-item">
-                        <img src="assets/icons/expressjs.png" alt="Express"><span>Express.js</span>
-                    </div>
-                </div>
-            </div>
-            <div class="skill-group fade-in-element">
-                <p class="skill-group-label">Database & Tools</p>
-                <div class="skill-items">
-                    <div class="skill-item">
-                        <img src="assets/icons/MongoDB.png" alt="MongoDB"><span>MongoDB</span>
-                    </div>
-                    <div class="skill-item">
-                        <img src="assets/icons/github.png" alt="GitHub"><span>GitHub</span>
-                    </div>
-                    <div class="skill-item">
-                        <img src="assets/icons/vscode.png" alt="VS Code"><span>VS Code</span>
-                    </div>
+                <div class="meta-item">
+                    <span class="meta-key">Specialty</span>
+                    <span class="meta-val">Full-Stack Development</span>
                 </div>
             </div>
         </div>
-    </section>
-    <!-- PROJECTS -->
-    <section id="projects" class="projects fade-up-element">
-        <div class="section-header">
-            <span class="section-num">04</span>
-            <h2 class="section-title" data-scramble>Projects</h2>
-        </div>
-        <div class="projects-list">
-
-            <div class="project-card fade-in-element">
-                <div class="project-img-wrap">
-                    <img src="assets/Project_Images/SecondBrain.png" alt="NeuroVault">
-                    <div class="project-overlay">
-                        <a href="https://github.com/maheshwarikartik1902-droid/Second-brain" target="_blank"
-                            class="overlay-link">Code ↗</a>
-                    </div>
-                </div>
-                <div class="project-info">
-                    <div class="project-meta">
-                        <span class="project-num">01</span>
-                        <div class="project-tags">
-                            <span>Next.js</span><span>Convex</span><span>Clerk</span><span>OpenAI</span>
-                        </div>
-                    </div>
-                    <h3 class="project-title">NeuroVault</h3>
-                    <p class="project-desc">A Second Brain app to centralize notes and docs with OpenAI-powered
-                        summarization, AI chat, and semantic vector search.</p>
-                </div>
+        <div class="about-tabs-wrap">
+            <div class="tabs">
+                <button class="tab active" data-tab="languages">Languages</button>
+                <button class="tab" data-tab="accomplishments">Achievements</button>
+                <button class="tab" data-tab="education">Education</button>
             </div>
-
-            <div class="project-card fade-in-element">
-                <div class="project-img-wrap">
-                    <img src="assets/Project_Images/TypingBud.png" alt="TypingBud">
-                    <div class="project-overlay">
-                        <a href="https://github.com/maheshwarikartik1902-droid/Typing-Bud.git" target="_blank"
-                            class="overlay-link">Code ↗</a>
-                        <a href="https://typing-bud.vercel.app/" target="_blank" class="overlay-link">Live ↗</a>
-                    </div>
-                </div>
-                <div class="project-info">
-                    <div class="project-meta">
-                        <span class="project-num">02</span>
-                        <div class="project-tags">
-                            <span>React.js</span><span>Express.js</span><span>JWT</span>
-                        </div>
-                    </div>
-                    <h3 class="project-title">TypingBud</h3>
-                    <p class="project-desc">A typing speed app with three test modes, a real-time WPM & accuracy engine,
-                        and JWT-based auth with protected routes.</p>
-                </div>
+            <div id="languages" class="content active">
+                <ul class="list-clean">
+                    <li>JavaScript</li>
+                    <li>HTML / CSS</li>
+                    <li>C++</li>
+                </ul>
             </div>
-
-            <div class="project-card fade-in-element">
-                <div class="project-img-wrap">
-                    <img src="assets/Project_Images/Captionly.png" alt="Captionly">
-                    <div class="project-overlay">
-                        <a href="https://github.com/maheshwarikartik1902-droid/Captionly.git" target="_blank"
-                            class="overlay-link">Code ↗</a>
-                    </div>
-                </div>
-                <div class="project-info">
-                    <div class="project-meta">
-                        <span class="project-num">03</span>
-                        <div class="project-tags">
-                            <span>Next.js</span><span>React</span><span>FFmpeg/WASM</span>
-                        </div>
-                    </div>
-                    <h3 class="project-title">Captionly</h3>
-                    <p class="project-desc">A full-stack captions platform — upload videos, generate transcriptions,
-                        edit timing, and render captions client-side via FFmpeg compiled to WebAssembly.</p>
-                </div>
+            <div id="accomplishments" class="content">
+                <ul class="list-clean">
+                    <li>Ranked top 5 in academic batch</li>
+                    <li><span id="leetcode+gfg"></span> DSA problems on LeetCode & GFG</li>
+                </ul>
+            </div>
+            <div id="education" class="content">
+                <ul class="list-clean edu">
+                    <li>
+                        <strong>B.Tech CSE (AI & ML)</strong><br>
+                        G.B.Pant Institute of Engineering & Technology<br>
+                        <span class="year">2022 – 2026</span>
+                    </li>
+                    <li>
+                        <strong>Senior Secondary</strong><br>
+                        St. Peters School, Kichha
+                    </li>
+                </ul>
             </div>
         </div>
-    </section>
+    </div>
+    </div> <!-- end about-grid -->
 
-    <!-- CONTACT -->
-    <section id="contact" class="contact fade-up-element">
-        <div class="section-header">
-            <span class="section-num">05</span>
-            <h2 class="section-title" data-scramble>Contact</h2>
+    <div class="about-graphs">
+        <div class="about-graph-card">
+            <p class="skill-group-label">GitHub Activity</p>
+            <img data-src="https://github-readme-activity-graph.vercel.app/graph?username=maheshwarikartik1902-droid&bg_color=0b0b0b&color=6b6762&line=9eb8a0&point=e8e4dc&area=true&hide_border=true&area_color=9eb8a0&title_color=3a3835"
+                alt="GitHub Activity Graph" class="about-graph-img lazy-img" />
         </div>
-        <div class="contact-grid">
-            <div class="contact-info">
-                <p class="contact-intro">Open to collaborations, opportunities, or just a conversation.</p>
-                <div class="contact-links">
-                    <a href="mailto:maheshwarikartik1902@gmail.com" class="contact-link">
-                        <span class="link-label">Email</span>
-                        <span class="link-val">maheshwarikartik1902@gmail.com ↗</span>
-                    </a>
-                    <a href="https://github.com/maheshwarikartik1902-droid" target="_blank" class="contact-link">
-                        <span class="link-label">GitHub</span>
-                        <span class="link-val">maheshwarikartik1902-droid ↗</span>
-                    </a>
-                    <a href="https://www.linkedin.com/in/kartik-maheshwari-" target="_blank" class="contact-link">
-                        <span class="link-label">LinkedIn</span>
-                        <span class="link-val">kartik-maheshwari ↗</span>
-                    </a>
+    </div>
+</section>
+
+
+<!-- SKILLS -->
+<section id="skills" class="skills fade-up-element">
+    <div class="section-header">
+        <span class="section-num">03</span>
+        <h2 class="section-title" data-scramble>Skills</h2>
+    </div>
+    <div class="skills-manifest">
+
+        <div class="skill-row fade-in-element">
+            <span class="skill-row-label">Languages</span>
+            <div class="skill-row-items">
+                <span class="skill-tag"><span>JavaScript</span></span>
+                <span class="skill-tag"><span>HTML</span></span>
+                <span class="skill-tag"><span>CSS</span></span>
+                <span class="skill-tag"><span>C++</span></span>
+            </div>
+    
+        </div>
+
+        <div class="skill-row fade-in-element">
+            <span class="skill-row-label">Frontend</span>
+            <div class="skill-row-items">
+                <span class="skill-tag"><span>React.js</span></span>
+                <span class="skill-tag"><span>Next.js</span></span>
+                <span class="skill-tag"><span>Tailwind CSS</span></span>
+                <span class="skill-tag"><span>shadcn/ui</span></span>
+            </div>
+            
+        </div>
+
+        <div class="skill-row fade-in-element">
+            <span class="skill-row-label">Backend</span>
+            <div class="skill-row-items">
+                <span class="skill-tag"><span>Node.js</span></span>
+                <span class="skill-tag"><span>Express.js</span></span>
+                <span class="skill-tag"><span>REST APIs</span></span>
+                <span class="skill-tag"><span>JWT</span></span>
+                <span class="skill-tag"><span>Clerk</span></span>
+            </div>
+            
+        </div>
+
+        <div class="skill-row fade-in-element">
+            <span class="skill-row-label">Database & Cloud</span>
+            <div class="skill-row-items">
+                <span class="skill-tag"><span>MongoDB</span></span>
+                <span class="skill-tag"><span>Convex</span></span>
+                <span class="skill-tag"><span>UploadThing</span></span>
+            </div>
+            
+        </div>
+
+        <div class="skill-row fade-in-element">
+            <span class="skill-row-label">Tools</span>
+            <div class="skill-row-items">
+                <span class="skill-tag"><span>Git</span></span>
+                <span class="skill-tag"><span>GitHub</span></span>
+                <span class="skill-tag"><span>Postman</span></span>
+                <span class="skill-tag"><span>Vercel</span></span>
+                <span class="skill-tag"><span>Render</span></span>
+                <span class="skill-tag"><span>Copilot</span></span>
+            </div>
+            
+        </div>
+
+    </div>
+</section>
+<!-- PROJECTS -->
+<section id="projects" class="projects fade-up-element">
+    <div class="section-header">
+        <span class="section-num">04</span>
+        <h2 class="section-title" data-scramble>Projects</h2>
+    </div>
+    <div class="projects-list">
+
+        <div class="project-card fade-in-element">
+            <div class="project-img-wrap">
+                <img src="assets/Project_Images/SecondBrain.png" alt="NeuroVault">
+                <div class="project-overlay">
+                    <a href="https://github.com/maheshwarikartik1902-droid/Second-brain" target="_blank"
+                        class="overlay-link">Code ↗</a>
                 </div>
             </div>
-            <form id="contact-form" class="contact-form" novalidate>
-                <div class="form-field">
-                    <label for="name">Name</label>
-                    <input type="text" id="name" name="name" placeholder="Your name" required />
+            <div class="project-info">
+                <div class="project-meta">
+                    <span class="project-num">01</span>
+                    <div class="project-tags">
+                        <span>Next.js</span><span>Convex</span><span>Clerk</span><span>OpenAI</span>
+                    </div>
                 </div>
-                <div class="form-field">
-                    <label for="email">Email</label>
-                    <input type="email" id="email" name="email" placeholder="your@email.com" required />
-                </div>
-                <div class="form-field">
-                    <label for="message">Message</label>
-                    <textarea id="message" name="message" rows="5" placeholder="What's on your mind?"
-                        required></textarea>
-                </div>
-                <button type="submit" class="btn-primary wiggle-btn">Send Message</button>
-            </form>
+                <h3 class="project-title">NeuroVault</h3>
+                <p class="project-desc">A Second Brain app to centralize notes and docs with OpenAI-powered
+                    summarization, AI chat, and semantic vector search.</p>
+            </div>
         </div>
-    </section>
 
-    <!-- FOOTER -->
-    <footer class="footer">
-        <span>© 2025 Kartik Maheshwari</span>
-        <span>Designed & built with precision.</span>
-    </footer>
+        <div class="project-card fade-in-element">
+            <div class="project-img-wrap">
+                <img src="assets/Project_Images/TypingBud.png" alt="TypingBud">
+                <div class="project-overlay">
+                    <a href="https://github.com/maheshwarikartik1902-droid/Typing-Bud.git" target="_blank"
+                        class="overlay-link">Code ↗</a>
+                    <a href="https://typing-bud.vercel.app/" target="_blank" class="overlay-link">Live ↗</a>
+                </div>
+            </div>
+            <div class="project-info">
+                <div class="project-meta">
+                    <span class="project-num">02</span>
+                    <div class="project-tags">
+                        <span>React.js</span><span>Express.js</span><span>JWT</span>
+                    </div>
+                </div>
+                <h3 class="project-title">TypingBud</h3>
+                <p class="project-desc">A typing speed app with three test modes, a real-time WPM & accuracy engine,
+                    and JWT-based auth with protected routes.</p>
+            </div>
+        </div>
 
-    <script src="script.js"></script>
+        <div class="project-card fade-in-element">
+            <div class="project-img-wrap">
+                <img src="assets/Project_Images/Captionly.png" alt="Captionly">
+                <div class="project-overlay">
+                    <a href="https://github.com/maheshwarikartik1902-droid/Captionly.git" target="_blank"
+                        class="overlay-link">Code ↗</a>
+                </div>
+            </div>
+            <div class="project-info">
+                <div class="project-meta">
+                    <span class="project-num">03</span>
+                    <div class="project-tags">
+                        <span>Next.js</span><span>React</span><span>FFmpeg/WASM</span>
+                    </div>
+                </div>
+                <h3 class="project-title">Captionly</h3>
+                <p class="project-desc">A full-stack captions platform — upload videos, generate transcriptions,
+                    edit timing, and render captions client-side via FFmpeg compiled to WebAssembly.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="contact fade-up-element">
+    <div class="section-header">
+        <span class="section-num">05</span>
+        <h2 class="section-title" data-scramble>Contact</h2>
+    </div>
+    <div class="contact-grid">
+        <div class="contact-info">
+            <p class="contact-intro">Open to collaborations, opportunities, or just a conversation.</p>
+            <div class="contact-links">
+                <a href="mailto:maheshwarikartik1902@gmail.com" class="contact-link">
+                    <span class="link-label">Email</span>
+                    <span class="link-val">maheshwarikartik1902@gmail.com ↗</span>
+                </a>
+                <a href="https://github.com/maheshwarikartik1902-droid" target="_blank" class="contact-link">
+                    <span class="link-label">GitHub</span>
+                    <span class="link-val">maheshwarikartik1902-droid ↗</span>
+                </a>
+                <a href="https://www.linkedin.com/in/kartik-maheshwari-" target="_blank" class="contact-link">
+                    <span class="link-label">LinkedIn</span>
+                    <span class="link-val">kartik-maheshwari ↗</span>
+                </a>
+            </div>
+        </div>
+        <form id="contact-form" class="contact-form" novalidate>
+            <div class="form-field">
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" placeholder="Your name" required />
+            </div>
+            <div class="form-field">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" placeholder="your@email.com" required />
+            </div>
+            <div class="form-field">
+                <label for="message">Message</label>
+                <textarea id="message" name="message" rows="5" placeholder="What's on your mind?" required></textarea>
+            </div>
+            <button type="submit" class="btn-primary wiggle-btn">Send Message</button>
+        </form>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+    <span>© 2025 Kartik Maheshwari</span>
+    <span>Designed & built with precision.</span>
+</footer>
+
+<script src="script.js"></script>
 </body>
 
 </html>

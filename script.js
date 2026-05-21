@@ -5,7 +5,7 @@
 /* ---- api for solved questions ---- */
 // Fetch on page load, cache for 24h
 const HARDCODED_STATS = {
-    leetcode: 230,
+    leetcode: 225,
     gfg: 35
 };
 let dsaCount = HARDCODED_STATS.leetcode + HARDCODED_STATS.gfg;
