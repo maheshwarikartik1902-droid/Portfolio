@@ -53,8 +53,16 @@ async function fetchStats() {
     dsaCount = Number(leetcode) + Number(gfg);
     document.getElementById("leetcode+gfg").textContent = `${dsaCount}+`;
 
-    const termDsa = document.getElementById("term-dsa");
-    if (termDsa) termDsa.textContent = `${dsaCount}+`;
+    const checkInterval = setInterval(() => {
+        const termDsa = document.getElementById("term-dsa");
+        if (termDsa) {
+            termDsa.textContent = `${dsaCount}+`;
+            clearInterval(checkInterval);
+        }
+    }, 100); // check every 100ms
+
+    // Stop checking after 10s to avoid infinite loop
+    setTimeout(() => clearInterval(checkInterval), 10000);
 
     clearTimeout(statsTimeout);
     if (!terminalTimeout) initTerminal();
