@@ -1,5 +1,8 @@
 {
   "projects": {
-    "default": "portfolio-47002"
-  }
+    "default": "portfolio-47002",
+    "production": "kartik-maheshwari"
+  },
+  "targets": {},
+  "etags": {}
 }
