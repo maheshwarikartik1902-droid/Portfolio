@@ -5,23 +5,25 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Kartik Maheshwari — Full Stack Developer</title>
+    <link rel="icon" href="assets/main.png" type="image/png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
         href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300&family=Syne:wght@400;500;600;700;800&display=block"
         rel="stylesheet">
     <link rel="stylesheet" href="style.css" />
-    <script src="config.js"></script>
+    
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
     </script>
     <script type="text/javascript">
         (function () {
             emailjs.init({
-                publicKey: (CONFIG.emailjs_key), // use your own public key
+                publicKey: "rfg-Mq73vFzGTh8Qk", // use your own public key
             });
         })();
     </script>
-</head <body>
+</head>
+<body>
 
 <!-- Custom Cursor -->
 <div id="cursor-dot"></div>
@@ -72,9 +74,9 @@
     <div class="hero-right">
         <div class="hero-terminal" id="hero-terminal">
             <div class="term-bar">
-                <div class="term-dot"></div>
-                <div class="term-dot"></div>
-                <div class="term-dot"></div>
+                <div class="term-dot-red"></div>
+                <div class="term-dot-yellow"></div>
+                <div class="term-dot-green"></div>
                 <span class="term-title">kartik@portfolio ~</span>
             </div>
             <div class="term-body" id="term-body"></div>
@@ -90,6 +92,7 @@
 <div class="tech-ticker" aria-hidden="true">
     <div class="ticker-track">
         <span class="ticker-item">JavaScript <span class="tick-sep">·</span></span>
+        <span class="ticker-item">Typescript <span class="tick-sep">·</span></span>
         <span class="ticker-item">React.js <span class="tick-sep">·</span></span>
         <span class="ticker-item">Next.js <span class="tick-sep">·</span></span>
         <span class="ticker-item">Node.js <span class="tick-sep">·</span></span>
@@ -100,8 +103,10 @@
         <span class="ticker-item">shadcn/ui <span class="tick-sep">·</span></span>
         <span class="ticker-item">GitHub <span class="tick-sep">·</span></span>
         <span class="ticker-item">REST APIs <span class="tick-sep">·</span></span>
+        <span class="ticker-item">Docker <span class="tick-sep">·</span></span>
         <!-- duplicate for seamless loop -->
         <span class="ticker-item">JavaScript <span class="tick-sep">·</span></span>
+        <span class="ticker-item">Typescript <span class="tick-sep">·</span></span>
         <span class="ticker-item">React.js <span class="tick-sep">·</span></span>
         <span class="ticker-item">Next.js <span class="tick-sep">·</span></span>
         <span class="ticker-item">Node.js <span class="tick-sep">·</span></span>
@@ -112,6 +117,7 @@
         <span class="ticker-item">shadcn/ui <span class="tick-sep">·</span></span>
         <span class="ticker-item">GitHub <span class="tick-sep">·</span></span>
         <span class="ticker-item">REST APIs <span class="tick-sep">·</span></span>
+        <span class="ticker-item">Docker <span class="tick-sep">·</span></span>
     </div>
 </div>
 
@@ -151,8 +157,9 @@
             <div id="languages" class="content active">
                 <ul class="list-clean">
                     <li>JavaScript</li>
-                    <li>HTML / CSS</li>
+                    <li>Typescript</li>
                     <li>C++</li>
+                    <li>HTML / CSS</li>
                 </ul>
             </div>
             <div id="accomplishments" class="content">
@@ -203,9 +210,9 @@
             <span class="skill-row-label">Languages</span>
             <div class="skill-row-items">
                 <span class="skill-tag"><span>JavaScript</span></span>
-                <span class="skill-tag"><span>HTML</span></span>
-                <span class="skill-tag"><span>CSS</span></span>
+                <span class="skill-tag"><span>Typescript</span></span>
                 <span class="skill-tag"><span>C++</span></span>
+                <span class="skill-tag"><span>HTML</span></span>
             </div>
 
         </div>
@@ -246,6 +253,7 @@
         <div class="skill-row fade-in-element">
             <span class="skill-row-label">Tools</span>
             <div class="skill-row-items">
+                <span class="skill-tag"><span>Docker</span></span>
                 <span class="skill-tag"><span>Git</span></span>
                 <span class="skill-tag"><span>GitHub</span></span>
                 <span class="skill-tag"><span>Postman</span></span>
@@ -268,7 +276,7 @@
 
         <div class="project-card fade-in-element">
             <div class="project-img-wrap">
-                <img src="assets/Project_Images/SecondBrain.png" alt="NeuroVault">
+                <img src="assets/Project_Images/SecondBrain.png" alt="secondBrain">
                 <div class="project-overlay">
                     <a href="https://github.com/maheshwarikartik1902-droid/Second-brain" target="_blank"
                         class="overlay-link">Code ↗</a>
@@ -281,7 +289,7 @@
                         <span>Next.js</span><span>Convex</span><span>Clerk</span><span>OpenAI</span>
                     </div>
                 </div>
-                <h3 class="project-title">NeuroVault</h3>
+                <h3 class="project-title">SecondBrain</h3>
                 <p class="project-desc">A Second Brain app to centralize notes and docs with OpenAI-powered
                     summarization, AI chat, and semantic vector search.</p>
             </div>

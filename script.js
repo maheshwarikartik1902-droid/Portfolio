@@ -518,6 +518,20 @@ form.addEventListener("submit", (e) => {
         email: document.getElementById("email").value,
         message: document.getElementById("message").value,
     };
+    if (!params.name) {
+        showToast("Please enter your name.");
+        return;
+    }
+
+    if (!params.email) {
+        showToast("Please enter your email.");
+        return;
+    }
+
+    if (!params.message) {
+        showToast("Please enter your message.");
+        return;
+    }
     loadingOverlay.classList.add("active");
     emailjs.send(SERVICE_ID, TEMPLATE_ID, params)
         .then(() => {

@@ -431,11 +431,26 @@ section {
     align-items: center;
     gap: 6px;
 }
-.term-dot {
+.term-dot-red {
     width: 10px; height: 10px;
     border-radius: 50%;
     background: var(--text-dim);
     flex-shrink: 0;
+    background-color: #FF5F57;
+}
+.term-dot-yellow {
+    width: 10px; height: 10px;
+    border-radius: 50%;
+    background: var(--text-dim);
+    flex-shrink: 0;
+    background-color: #FEBC2E;
+}
+.term-dot-green {
+    width: 10px; height: 10px;
+    border-radius: 50%;
+    background: var(--text-dim);
+    flex-shrink: 0;
+    background-color: #28C840;
 }
 .term-title {
     font-size: 0.62rem;
